@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>한국효소공학연구회</title>
+<title>안녕하세요</title>
 <script>
 // 모바일 팝업 가로길이
 
@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="wrap">
-	
+	hi
 </div>
 </body>
 </html>
