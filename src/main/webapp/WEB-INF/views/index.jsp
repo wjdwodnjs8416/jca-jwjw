@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="wrap">
-	hi
+	<a href="<c:url value="/"/>">home</a>
 </div>
 </body>
 </html>
