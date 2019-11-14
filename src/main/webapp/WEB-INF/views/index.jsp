@@ -43,6 +43,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#join">Join</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -89,6 +92,24 @@
         <div class="col-lg-8 mx-auto">
           <h2>Contact us</h2>
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="join" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Join</h2>
+          	<table class="lead">
+          		<tr>
+          			<td>이름</td>
+          			<td>
+          				<input type="text" placeholder="이름을 입력하세요."></input>
+          			</td>
+          		</tr>
+          	</table>
         </div>
       </div>
     </div>
