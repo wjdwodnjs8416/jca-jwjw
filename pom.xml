@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>www.jca</groupId>
 	<artifactId>com</artifactId>
-	<name>WKU</name>
+	<name>JCA</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

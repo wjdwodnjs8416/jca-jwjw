@@ -4,6 +4,6 @@
 
 <configuration>
     <typeAliases>
-		
+		<typeAlias type="www.jca.com.vo.UserVO" alias="user"/>
     </typeAliases>
 </configuration>
