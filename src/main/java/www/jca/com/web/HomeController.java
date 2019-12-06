@@ -29,9 +29,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(Locale locale, ModelAndView mv,
 			HttpServletRequest req, Authentication authentication) {
-		List<UserVO> users = userService.select();
-		
-		mv.addObject("users", users);
 		mv.setViewName("index");
 		return mv;
 	}
