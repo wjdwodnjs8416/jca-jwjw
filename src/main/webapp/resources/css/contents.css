@@ -165,7 +165,7 @@
 .board_list_wrap .page_wrap .bt {
     width: 15px;
     height: 16px;
-    background: #fff url(/img/comm/page_arrow.png) no-repeat;
+    background: #fff url(/resources/img/comm/page_arrow.png) no-repeat;
     background-size: 15px;
     text-indent: -1000px;
     overflow: hidden;
@@ -262,32 +262,6 @@
     color: #777;
 }
 
-.board_view_wrap .link {
-    padding: 20px 10px;
-    border-bottom: 1px solid #ddd;
-    line-height: 160%;
-    font-size: 1.3rem;
-    color: #777;
-}
-
-.board_view_wrap .link strong,
-.board_view_wrap .link a {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.board_view_wrap .link strong {
-    margin-right: 10px;
-}
-
-.board_view_wrap .link a {
-    word-break: break-all;
-}
-
-.board_view_wrap .link a:hover {
-    text-decoration: underline;
-}
-
 .board_write_wrap {
     width: calc( 100% - 40px );
     max-width: 1000px;
@@ -337,6 +311,9 @@
     width: 72%;
 }
 
+.board_write dl.content { padding: 0; border-bottom: 0; }
+.board_write dl.content dd { width: 100%; margin-top: -1px; font-size: 0; }
+
 .board_write .title input[type="text"],
 .board_write .link input[type="text"] {
     width: 100%;
@@ -362,6 +339,6 @@
     height: 12px;
     margin-left: 2px;
     border: 0;
-    background: transparent url(/img/comm/bt_del.png) no-repeat 0 0 /12px;
+    background: transparent url(/resources/img/comm/bt_del.png) no-repeat 0 0 /12px;
     text-indent: -1000px;
 }

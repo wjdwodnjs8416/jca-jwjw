@@ -61,20 +61,27 @@
                             <dt>제목</dt>
                             <dd><input type="text" placeholder="제목 입력" name="title"></dd>
                         </dl>
-                        <dl>
-                            <dt>내용</dt>
+                        <dl class="content">
                             <dd>
                             	<textarea name="content" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
                             </dd>
-                        </dl>
-                        <dl class="link">
-                            <dt>참고링크</dt>
-                            <dd><input type="text" placeholder="링크 입력"></dd>
                         </dl>
                         <dl class="image">
                             <dt>사진</dt>
                             <dd>
                                 <input type="button" value="사진 등록" class="bt2">
+                                <ul>
+                                    <li>
+                                        <span>파일명.jpg</span>
+                                        <input type="button" value="삭제" class="bt_del">
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="file">
+                            <dt>첨부파</dt>
+                            <dd>
+                                <input type="button" value="파일 등록" class="bt2">
                                 <ul>
                                     <li>
                                         <span>파일명.jpg</span>
