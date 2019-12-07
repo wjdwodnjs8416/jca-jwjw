@@ -49,7 +49,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers(IGNORED_RESOURCE_LIST);
-		
 	}
 	
 	/**
@@ -75,6 +74,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.permitAll()
 			.and()
 			.exceptionHandling().accessDeniedPage("/403")
+			.and()
+			.headers().frameOptions().disable()
 			.and()
 			.logout().logoutUrl("/j_spring_security_logout")
 			.deleteCookies("JSESSIONID")

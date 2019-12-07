@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import www.jca.com.service.BoardService;
@@ -53,17 +54,18 @@ public class NoticeController extends JCAController implements BoardController<B
 		mv.setViewName("/notice/edit");
 		return mv;
 	}
-
-	@RequestMapping(value="/write", method = RequestMethod.GET)
+	
 	@Override
+	@RequestMapping(value="/write", method = RequestMethod.GET)
 	public ModelAndView getWriteView(ModelAndView mv, Board model, HttpServletRequest request) {
 		model.setBoardType(BOARD_TYPE);
 		mv.setViewName("/notice/write");
 		return mv;
 	}
-
-	@RequestMapping(value="/write", method=RequestMethod.POST, produces = "application/json; charset=utf8")
+	
 	@Override
+	@ResponseBody
+	@RequestMapping(value="/write", method=RequestMethod.POST, produces = "application/json; charset=utf8")
 	public String write(Board model) {
 		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
@@ -77,9 +79,10 @@ public class NoticeController extends JCAController implements BoardController<B
 		
 		return json.toString();
 	}
-
-	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	
 	@Override
+	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	@ResponseBody
 	public String edit(Board model) {
 		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
@@ -87,8 +90,9 @@ public class NoticeController extends JCAController implements BoardController<B
 		return json.toString();
 	}
 
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	@Override
+	@ResponseBody
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	public String delete(Board model) {
 		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
