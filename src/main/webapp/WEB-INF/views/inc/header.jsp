@@ -45,7 +45,15 @@
         });
     });
 </script>
-<div>
+<div class="top">
+	<div>
+		<a href="#" style="color: blue;">현재 사이트 제작 중</a>
+		<a href="#">등록</a>
+		<a href="#">로그인</a>
+		<a href="#">로그아웃</a>
+	</div>
+</div>
+<div id="header">
     <h1 class="logo"><a href="/"><img src="<c:url value="/resources/img/comm/logo.png"/>" alt="전주코딩학원"></a></h1>
     <div id="gnbWrap">
         <ul></ul>
