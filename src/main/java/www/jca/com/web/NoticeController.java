@@ -43,6 +43,10 @@ public class NoticeController extends JCAController implements BoardController<B
 	@RequestMapping(value="/view", method = RequestMethod.GET)
 	public ModelAndView getDetailView(ModelAndView mv, Board model) {
 		model.setBoardType(BOARD_TYPE);
+		Board board = service.selectOne(model);
+		logger.info(board.toString());
+		
+		mv.addObject("board", board);
 		mv.setViewName("/notice/view");
 		return mv;
 	}

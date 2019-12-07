@@ -29,21 +29,21 @@
                 <div class="board_view">
                     <div class="category">학원소식</div>
                     <div class="etc">
-                        <span>부원장</span>
-                        <span>2019.11.12</span>
+                        <span>${board.writer }</span>
+                        <span>${board.wdate }</span>
                     </div>
-                    <div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
+                    <div class="title"><a href="#">${board.title }</a></div>
                     <div class="image"><a href="#"><img src="<c:url value="/img/temp/1.jpeg"/>" alt="사진"></a></div>
-                    <div class="cont">내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다.<br>내용이 들어갑니다. 내용이 들어갑니다.</div>
+                    <div class="cont">${board.content }</div>
                     <div class="link">
                         <strong>참고링크</strong>
                         <a href="https://www.naver.com" target="_blank">https://www.naver.com</a>
                     </div>
                 </div>
 				<div class="bt_wrap">
-					<a href="<c:url value="/resources/notice/"/>" class="bt1 on">목록</a>
-					<a href="<c:url value="/resources/board/edit"/>" class="bt1">수정</a>
-					<a href="<c:url value="/resources/board/write"/>" class="bt1">글쓰기</a>
+					<a href="<c:url value="/notice/"/>" class="bt1 on">목록</a>
+					<a href="<c:url value="/board/edit"/>" class="bt1">수정</a>
+					<a href="<c:url value="/board/write"/>" class="bt1">글쓰기</a>
 				</div>
 			</div>
 		</div>

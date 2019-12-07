@@ -32,7 +32,7 @@
 						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
-							<div class="title"><a href="#">${item.title }</a></div>
+							<div class="title"><a href="<c:url value="/notice/view?id=${item.id }"/>">${item.title }</a></div>
 							<div class="etc">
 								<span>부원장</span>
 								<span>2019.11.12</span>
