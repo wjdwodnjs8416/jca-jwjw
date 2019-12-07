@@ -5,12 +5,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>전주코딩학원</title>
-	<link rel="icon" href="/img/comm/favicon.ico">
-	<link rel=" shortcut icon" href="/img/comm/favicon.ico">
-    <link rel="stylesheet" href="/css/css.css">
-    <script src="/js/jquery-1.12.1.min.js"></script>
-	<script>$(function(){ $( "#headerWrap" ).load( "/inc/head.html" ); });</script>
+	<c:import url="/inc/head"></c:import>
 </head>
 <body>
 	<div id="wrap">

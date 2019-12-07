@@ -4,10 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>${title }</title>
-<script type="text/javascript">
-</script>
+	<c:import url="/inc/head"></c:import>
 </head>
 <body>
 /class/list.jsp

@@ -5,12 +5,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>전주코딩학원</title>
 	<c:import url="/inc/head"></c:import>
-	<link rel="icon" href="<c:url value="/resources/img/comm/favicon.ico"/>">
-	<link rel=" shortcut icon" href="<c:url value="/resources/img/comm/favicon.ico"/>">
-    <link rel="stylesheet" href="<c:url value="/resources/css/css.css"/>">
-    
     <script type="text/javascript" src="<c:url value="/resources/js/service/HuskyEZCreator.js"/>" charset="utf-8"></script>
 	<script type="text/javascript">
 		function insertBoard(){

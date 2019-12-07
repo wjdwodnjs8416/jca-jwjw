@@ -6,12 +6,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>전주코딩학원</title>
-	<link rel="icon" href="<c:url value="resources/img/comm/favicon.ico"/>">
-	<link rel=" shortcut icon" href="<c:url value="resources/img/comm/favicon.ico"/>">
-	<link rel="stylesheet" href="<c:url value="resources/css/css.css"/>">
-	<script src="<c:url value="resources/js/jquery-1.12.1.min.js"/>"></script>
-	<script>$(function(){ $( "#headerWrap" ).load( "/inc/head" ); });</script>
+	<c:import url="/inc/head"></c:import>
 </head>
 <body>
 	<div id="wrap">
