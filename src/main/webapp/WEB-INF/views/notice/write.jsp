@@ -10,7 +10,25 @@
 	<link rel=" shortcut icon" href="<c:url value="/resources/img/comm/favicon.ico"/>">
     <link rel="stylesheet" href="<c:url value="/resources/css/css.css"/>">
     <script src="<c:url value="/resources/js/jquery-1.12.1.min.js"/>"></script>
-	<script>$(function(){ $( "#headerWrap" ).load( "/inc/head.html" ); });</script>
+	<script type="text/javascript">
+		$(function(){ $( "#headerWrap" ).load( "/inc/head" ); });
+		function insertBoard(){
+			var url = $("form").attr("action");
+			var param = $("form").serialize();
+			
+			$.ajax({
+				url : url,
+				data: param,
+				type: "POST",
+				dataType: "json"
+			}).done(function(json){
+				if(json.result > 0){
+					alert("작성 완료!");
+					window.location.replace("/notice");
+				}
+			});
+		}
+	</script>
 </head>
 <body>
 	<div id="wrap">
@@ -27,32 +45,24 @@
             </div>
 			<div class="board_write_wrap">
                 <div class="board_write">
-                    <form>
+                    <form action="<c:url value="/notice/write"/>" method="post">
                         <dl>
                             <dt>카테고리</dt>
                             <dd>
-                                <select>
-                                    <option>학원소식</option>
-                                    <option>공지사항</option>
-                                    <option>개강안내</option>
+                                <select name="boardType">
+                                    <option value="1">학원소식</option>
+                                    <option value="2">공지사항</option>
+                                    <option value="3">개강안내</option>
                                 </select>
                             </dd>
                         </dl>
                         <dl class="title">
                             <dt>제목</dt>
-                            <dd><input type="text" placeholder="제목 입력"></dd>
-                        </dl>
-                        <dl class="date">
-                            <dt>날짜</dt>
-                            <dd><input type="text" placeholder="날짜 입력"></dd>
-                        </dl>
-                        <dl class="writer">
-                            <dt>글쓴이</dt>
-                            <dd><input type="text" placeholder="글쓴이 입력"></dd>
+                            <dd><input type="text" placeholder="제목 입력" name="title"></dd>
                         </dl>
                         <dl>
                             <dt>내용</dt>
-                            <dd><textarea placeholder="내용 입력"></textarea></dd>
+                            <dd><textarea placeholder="내용 입력" name="content"></textarea></dd>
                         </dl>
                         <dl class="link">
                             <dt>참고링크</dt>
@@ -73,7 +83,7 @@
                     </form>
                 </div>
 				<div class="bt_wrap">
-					<a href="#" class="bt1 on">글쓰기</a>
+					<a href="javascript:insertBoard();" class="bt1 on">글쓰기</a>
 					<a href="#" class="bt1">취소</a>
 				</div>
 			</div>

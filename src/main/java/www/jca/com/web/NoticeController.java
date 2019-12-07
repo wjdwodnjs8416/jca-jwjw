@@ -1,58 +1,87 @@
 package www.jca.com.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import www.jca.com.vo.Notice;
+import www.jca.com.service.BoardService;
+import www.jca.com.vo.Board;
+import www.jca.com.vo.UserVO;
 
 @RequestMapping("/notice")
 @Controller
-public class NoticeController implements BoardController<Notice>{
+public class NoticeController extends JCAController implements BoardController<Board>{
+	final int BOARD_TYPE = 1;
+	
+	@Autowired
+	BoardService service;
 	
 	@Override
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView getListView(ModelAndView mv, Notice model) {
+	public ModelAndView getListView(ModelAndView mv, Board model) {
+		model.setBoardType(BOARD_TYPE);
+		
+		int count = service.count(model);
+		model.setTotalCount(count);
+		
+		List<Board> boardList = service.select(model);
+		mv.addObject("list", boardList);
+		
 		mv.setViewName("/notice/list");
 		return mv;
 	}
 	
 	@Override	
 	@RequestMapping(value="/view", method = RequestMethod.GET)
-	public ModelAndView getDetailView(ModelAndView mv, Notice model) {
+	public ModelAndView getDetailView(ModelAndView mv, Board model) {
+		model.setBoardType(BOARD_TYPE);
 		mv.setViewName("/notice/view");
 		return mv;
 	}
 
 	@Override
 	@RequestMapping(value="/edit", method = RequestMethod.GET)
-	public ModelAndView getEditView(ModelAndView mv, Notice model, HttpServletRequest request) {
+	public ModelAndView getEditView(ModelAndView mv, Board model, HttpServletRequest request) {
+		model.setBoardType(BOARD_TYPE);
 		mv.setViewName("/notice/edit");
 		return mv;
 	}
 
 	@RequestMapping(value="/write", method = RequestMethod.GET)
 	@Override
-	public ModelAndView getWriteView(ModelAndView mv, Notice model, HttpServletRequest request) {
+	public ModelAndView getWriteView(ModelAndView mv, Board model, HttpServletRequest request) {
+		model.setBoardType(BOARD_TYPE);
 		mv.setViewName("/notice/write");
 		return mv;
 	}
 
-	@RequestMapping(value="/write", method=RequestMethod.POST)
+	@RequestMapping(value="/write", method=RequestMethod.POST, produces = "application/json; charset=utf8")
 	@Override
-	public String write(Notice model) {
+	public String write(Board model) {
+		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
+		UserVO user = getUser();
+		if(user != null) {
+			model.setWriter(user.getId());
+		}
+		
+		int result = service.insert(model);
+		json.put("result", result);
 		
 		return json.toString();
 	}
 
 	@RequestMapping(value="/edit", method=RequestMethod.POST)
 	@Override
-	public String edit(Notice model) {
+	public String edit(Board model) {
+		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
 		
 		return json.toString();
@@ -60,7 +89,8 @@ public class NoticeController implements BoardController<Notice>{
 
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
 	@Override
-	public String delete(Notice model) {
+	public String delete(Board model) {
+		model.setBoardType(BOARD_TYPE);
 		JSONObject json = new JSONObject();
 		
 		return json.toString();

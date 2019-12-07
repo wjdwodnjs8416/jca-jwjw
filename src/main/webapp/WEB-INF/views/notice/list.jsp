@@ -27,61 +27,19 @@
 			</div>
 			<div class="board_list_wrap">
 				<div class="board_list_type1">
+					<c:forEach items="${list }" var="item">
 					<div class="item">
 						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
-							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요. 충주 대미초등학교에 다녀왔어요.</a></div>
+							<div class="title"><a href="#">${item.title }</a></div>
 							<div class="etc">
 								<span>부원장</span>
 								<span>2019.11.12</span>
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
-						<div class="cont">
-							<div class="category">학원소식</div>
-							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
-							<div class="etc">
-								<span>부원장</span>
-								<span>2019.11.12</span>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="/resources/img/comm/noImg.gif"/>" alt="사진"></a></div>
-						<div class="cont">
-							<div class="category">학원소식</div>
-							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
-							<div class="etc">
-								<span>부원장</span>
-								<span>2019.11.12</span>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
-						<div class="cont">
-							<div class="category">학원소식</div>
-							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
-							<div class="etc">
-								<span>부원장</span>
-								<span>2019.11.12</span>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
-						<div class="cont">
-							<div class="category">학원소식</div>
-							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
-							<div class="etc">
-								<span>부원장</span>
-								<span>2019.11.12</span>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 				<div class="page_wrap">
 					<a href="javascript:pageGo(1)" class="bt first">맨 처음 페이지로 가기</a>
@@ -95,7 +53,7 @@
 				<div class="bt_wrap">
 					<a href="#" class="bt1 on">목록</a>
 					<a href="#" class="bt1">수정</a>
-					<a href="#" class="bt1">글쓰기</a>
+					<a href="<c:url value="/notice/write"/>" class="bt1">글쓰기</a>
 				</div>
 			</div>
 		</div>
