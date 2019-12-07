@@ -43,15 +43,7 @@
 				</div>
 			</div>
 			<div class="board_list_wrap">
-				<!--
-				<div class="board_list_tab">
-					<a href="#" class="on">전체보기</a>
-					<a href="#">학원소식</a>
-					<a href="#">수업안내</a>
-					<a href="#">수강생 작품</a>
-					<a href="#">추천도서</a>
-				</div>
-				-->
+				
 				<div class="board_list_type1">
 					<div class="item">
 						<div class="image"><a href="<c:url value="/board/view"/>"></a><img src="<c:url value="resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
