@@ -16,32 +16,41 @@
 				<div class="idx_slider">
 					<div class="item item1">
 						<div>
-							<img src="<c:url value="resources/img/index/slider1_txt.png"/>" alt="2020 정보처리기사 실기대비반">
+							<img src="<c:url value="/resources/img/index/slider1_txt.png"/>" alt="2020 정보처리기사 실기대비반">
 							<a href="#">자세히 보기</a>
 							<a href="#">수강신청</a>
 						</div>
 					</div>
 					<div class="item item2">
 						<div>
-							<img src="<c:url value="resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
+							<img src="<c:url value="/resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
 							<a href="#">자세히 보기</a>
 							<a href="#">수강신청</a>
 						</div>
 					</div>
 					<div class="item item3">
 						<div>
-							<img src="<c:url value="resources/img/index/slider3_txt.png"/>" alt="코딩앤플레이 주니어">
+							<img src="<c:url value="/resources/img/index/slider3_txt.png"/>" alt="코딩앤플레이 주니어">
 							<a href="#">자세히 보기</a>
 							<a href="#">수강신청</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="m_idx_slider_wrap">
+				<div class="m_idx_slider">
+					<div class="item item1">
+						<img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내">
+					</div>
+					<div class="item item2">
+						<img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내">
+					</div>
+				</div>
+			</div>
 			<div class="board_list_wrap">
-				
-				<div class="board_list_type1">
+				<div class="board_list_type3">
 					<div class="item">
-						<div class="image"><a href="<c:url value="/board/view"/>"></a><img src="<c:url value="resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
+						<div class="image"><a href="<c:url value="/board/view"/>"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
 							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요. 충주 대미초등학교에 다녀왔어요.</a></div>
@@ -52,7 +61,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
+						<div class="image"><a href="#"><img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
 							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
@@ -63,7 +72,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="resources/img/comm/noImg.gif"/>" alt="사진"></a></div>
+						<div class="image"><a href="#"><img src="<c:url value="/resources/img/comm/noImg.gif"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
 							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
@@ -74,7 +83,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
+						<div class="image"><a href="#"><img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
 							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
@@ -85,7 +94,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
+						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
 						<div class="cont">
 							<div class="category">학원소식</div>
 							<div class="title"><a href="#">충주 대미초등학교에 다녀왔어요.</a></div>
@@ -106,10 +115,10 @@
 					<a href="javascript:pageGo(1)" class="bt next">다음 페이지로 가기</a>
 					<a href="javascript:pageGo(1)" class="bt last">마지막 페이지로 가기</a>
 				</div>
-				-->
 				<div class="bt_wrap">
 					<a href="#" class="bt1">더 보기</a>
 				</div>
+				-->
 			</div>
 		</div>
 		<div id="footerWrap"></div>

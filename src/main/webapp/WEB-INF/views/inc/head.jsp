@@ -11,8 +11,8 @@
 
 <title>전주코딩학원</title>
 <meta name="description" content="어린이부터 실무자까지! 전주코딩학원에서 4차산업혁명의 중심이 되세요.">
-<link rel="icon" href="<c:url value="resources/img/comm/favicon.ico"/>">
-<link rel=" shortcut icon" href="<c:url value="resources/img/comm/favicon.ico"/>">
+<link rel="icon" href="<c:url value="/resources/img/comm/favicon.ico"/>">
+<link rel=" shortcut icon" href="<c:url value="/resources/img/comm/favicon.ico"/>">
 
 <meta property="og:title" content="전주코딩학원">
 <meta property="og:url" content="http://www.xn--o01bu84am0am2a97shmj.com">
@@ -25,10 +25,9 @@
 <meta name="twitter:image" content="<c:url value="/resources/img/comm/og.jpg"/>">
 <meta name="twitter:description" content="어린이부터 실무자까지! 전주코딩학원에서 4차산업혁명의 중심이 되세요.">
 
+
+<link rel="stylesheet" href="<c:url value="/resources/css/css.css"/>">
 <script src="<c:url value="/resources/js/jquery-1.12.1.min.js"/>"></script>
 <script src="<c:url value="/resources/js/common.js"/>"></script>
 <script src="<c:url value="/resources/js/jquery.bxslider.js"/>"></script>
 <script src="<c:url value="/resources/js/index.js"/>"></script>
-<link rel="stylesheet" href="<c:url value="resources/css/css.css"/>">
-	
-		

@@ -58,12 +58,17 @@
     margin-left: 0;
 }
 
+.board_list_type1 .image {
+	height: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
 .board_list_type1 .image img {
     width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .board_list_type1 {

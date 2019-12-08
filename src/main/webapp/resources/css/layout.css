@@ -19,7 +19,7 @@
 	width: calc( 100% - 40px);
 	max-width: 1000px;
 	margin: 0 auto;
-	padding-top: 5px;
+	padding-top: 6px;
 	text-align: right;
 	font-size: 0;
 }
@@ -154,9 +154,10 @@
 }
 
 #m_gnbWrap .m_gnb .title {
-    height: 50px;
-    padding: 16px 20px 0 15px;
+    height: 88px;
+    padding: 35px 20px 0 15px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 #m_gnbWrap .m_gnb .title img {
@@ -164,53 +165,66 @@
 }
 
 #m_gnbWrap .m_gnb > ul {
-    
+    padding: 0 20px;
+    background: #00bcd4;
 }
 
 #m_gnbWrap .m_gnb > ul > li {
-    border-top: 1px solid #ddd;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-#m_gnbWrap .m_gnb > ul > li:last-child {
-    border-bottom: 1px solid #ddd;
+#m_gnbWrap .m_gnb > ul > li:nth-of-type(1) {
+	border-top: 0;
 }
 
 #m_gnbWrap .m_gnb > ul > li > a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 0;
+    background: #00bcd4;
     font-size: 1.4rem;
+    color: #fff;
 }
 
 #m_gnbWrap .m_gnb > ul > li.on {
-    border-top: 1px solid #00a9bf;
 }
 
 #m_gnbWrap .m_gnb > ul > li.on > a {
-    background: #00bcd4;
-    color: #fff;
+    font-weight: 600;
 }
 
 #m_gnbWrap .m_gnb > ul > li > ul {
     display: none;
-    background: #f5f5f5;
+    padding: 15px 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 #m_gnbWrap .m_gnb > ul > li.on > ul {
     display: block;
 }
 
-#m_gnbWrap .m_gnb > ul > li > ul > li {
-    border-top: 1px dashed #ddd;
-}
-
-#m_gnbWrap .m_gnb > ul > li > ul > li:first-child {
-    border-top: 0;
-}
-
 #m_gnbWrap .m_gnb > ul > li > ul > li > a {
-    display:block;
-    padding: 10px 15px;
-    font-size: 1.4rem;
+	position: relative;
+	display: inline-block;
+	margin-top: 7px;
+	padding-left: 7px;
+	font-size: 1.3rem;
+	color: #fff;
+}
+
+#m_gnbWrap .m_gnb > ul > li > ul > li > a::before {
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 0;
+	display: block;
+	width: 2px;
+	height: 2px;
+	background: #fff;
+}
+
+
+#m_gnbWrap .m_gnb > ul > li > ul > li:first-child > a {
+	margin-top: 0;
 }
 
 #containerWrap {
@@ -252,7 +266,7 @@
 
 #footerWrap {
     padding: 18px 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #eee;
     text-align: center;
     font-size: 1.5rem;
 }

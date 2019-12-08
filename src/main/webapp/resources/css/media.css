@@ -4,7 +4,7 @@
     }
 
     #headerWrap {
-        height: 80px;
+        height: 88px;
     }
 
     #header {
@@ -15,11 +15,11 @@
 
     #header .logo img {
         height: 20px;
-        margin-top: 16px;
+        margin-top: 20px;
     }
 
     #gnbWrap {
-        margin-top: 11px;
+        margin-top: 16px;
     }
 
     #gnbWrap > ul {
@@ -54,7 +54,7 @@
 
     #footerWrap {
         padding: 10px 0;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .idx_slider_wrap {
@@ -187,6 +187,43 @@
     .board_list_type2 .etc {
         display: none;
     }
+    
+    .board_list_type3 .item {
+		position: relative;
+		min-height: 120px;
+		margin-top: 20px;
+		padding: 20px 120px 20px 20px;
+		box-sizing: border-box;
+		border-radius: 10px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
+    
+    .board_list_type3 .image {
+    	position: absolute;
+    	top: 20px;
+    	right: 20px;
+    }
+    
+    .board_list_type3 .image img {
+		width: 80px;
+		height: 80px;
+		border-radius: 30px;
+	}
+    
+    .board_list_type3 .category {
+    	font-size: 1.1rem;
+    	color: #00bcd4;
+    }
+
+    .board_list_type3 .title {
+        margin: 5px 0;
+        font-size: 1.3rem;
+    }
+
+    .board_list_type3 .etc {
+        font-size: 1.1rem;
+        color: #777;
+    }
 
     .board_list_wrap .page_wrap {
         margin-top: 20px;
@@ -310,4 +347,19 @@
     .board_list_type1 .image img {
         height: 180px;
     }
+}
+
+@media ( max-width: 600px ) {
+	#headerWrap {
+		box-shadow: none;
+	}
+	
+	.idx_slider_wrap {
+		display: none;
+	}
+	.m_idx_slider_wrap {
+		display: block;
+		margin-bottom: 20px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
 }

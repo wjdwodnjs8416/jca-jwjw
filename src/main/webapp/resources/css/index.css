@@ -54,3 +54,7 @@
 .idx_slider_wrap .item a:nth-of-type(1) {
     margin-right: 5px;
 }
+
+.m_idx_slider_wrap {
+	display: none;
+}

@@ -1,7 +1,7 @@
-@import url(reset.css);
-@import url(jquery.bxslider.css);
-@import url(common.css);
-@import url(layout.css);
-@import url(index.css);
-@import url(contents.css);
-@import url(media.css);
+@import url(/resources/css/reset.css);
+@import url(/resources/css/jquery.bxslider.css);
+@import url(/resources/css/common.css);
+@import url(/resources/css/layout.css);
+@import url(/resources/css/index.css);
+@import url(/resources/css/contents.css);
+@import url(/resources/css/media.css);
