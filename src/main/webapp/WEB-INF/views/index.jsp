@@ -39,10 +39,10 @@
 			</div>
 			<div class="m_idx_slider_wrap">
 				<div class="m_idx_slider">
-					<div class="item item1">
-						<img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내">
-					</div>
 					<div class="item item2">
+						<img src="<c:url value="/resources/img/index/m_slider2.png"/>" alt="코딩앤플레이 주니어">
+					</div>
+					<div class="item item1">
 						<img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내">
 					</div>
 				</div>
