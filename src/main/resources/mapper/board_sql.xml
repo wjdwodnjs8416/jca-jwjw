@@ -36,12 +36,13 @@
 			(SELECT COUNT(*) FROM PhotoInfo WHERE boardId = board.id) AS pictureCnt,
 			(SELECT boardName FROM BoardType WHERE id = board.boardType) AS boardName,
 			(SELECT COUNT(*) FROM Reply WHERE boardId = board.id) AS replyCnt,
-			usr.username AS writerName
+			usr.username AS writerName,
+			(SELECT url FROM PhotoInfo where boardId = board.id LIMIT 0,1) AS thumbnail
 		FROM 
 			Board board LEFT JOIN users usr ON (board.writer = usr.id)
 		<where>
 			<choose>
-				<when test="boardType eq 7">
+				<when test="boardType eq 0">
 					(
 						board.boardType = 1 or
 						board.boardType = 2 or
@@ -72,10 +73,12 @@
 		SELECT COUNT(*) FROM Board
 		<where>
 			<choose>
-				<when test="boardType eq 7">
+				<when test="boardType eq 0">
 					boardType = 1 or
 					boardType = 2 or
-					boardType = 3
+					boardType = 3 or
+					boardType = 4 or
+					boardType = 5
 				</when>
 				<otherwise>
 					boardType = ${boardType}

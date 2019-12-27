@@ -12,7 +12,7 @@ import www.jca.com.vo.PhotoInfo;
 @Component("photoInfoService")
 public class PhotoInfoService implements DataService<PhotoInfo> {
 	@Autowired
-	PhotoInfoDAO dao;
+	private PhotoInfoDAO dao;
 	
 	@Override
 	public int insert(PhotoInfo input) {

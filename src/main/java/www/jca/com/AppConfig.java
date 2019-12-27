@@ -24,8 +24,6 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.MessageCodesResolver;
@@ -48,6 +46,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import www.jca.com.util.BongInterceptor;
 
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
@@ -190,7 +190,12 @@ public class AppConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(localeChangeInterceptor());
 		
+		BongInterceptor uffdaInterceptor = new BongInterceptor();
+		
+		registry.addInterceptor(uffdaInterceptor)
+				.addPathPatterns("/**");
 	}
 
 	@Bean
@@ -200,8 +205,7 @@ public class AppConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO Auto-generated method stub
-		
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
 	@Override

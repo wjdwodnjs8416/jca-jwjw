@@ -2,10 +2,30 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!doctype html>
 <html>
 <head>
 	<c:import url="/inc/head"></c:import>
+	<script type="text/javascript">
+		function deleteBoard(id){
+			var url = "/notice/delete";
+			var param = "id="+id;
+			if(confirm("삭제하시겠습니까?")){
+				$.ajax({
+					url: url,
+					data: param,
+					type: "POST",
+					dataType: "json"
+				}).done(function(json){
+					if(json.result > 0){
+						alert("삭제 완료");
+						window.location.replace("/notice/");
+					}
+				});
+			}
+		}
+	</script>
 </head>
 <body>
 	<div id="wrap">
@@ -28,17 +48,30 @@
                         <span>${board.wdate }</span>
                     </div>
                     <div class="title"><a href="#">${board.title }</a></div>
-                    <div class="image"><a href="#"><img src="<c:url value="/img/temp/1.jpeg"/>" alt="사진"></a></div>
+                    <%--
+                    	<div class="image"><a href="#"><img src="<c:url value="/img/temp/1.jpeg"/>" alt="사진"></a></div>
+                     --%>
                     <div class="cont">${board.content }</div>
                     <div class="link">
                         <strong>참고링크</strong>
                         <a href="https://www.naver.com" target="_blank">https://www.naver.com</a>
                     </div>
                 </div>
+                <c:if test="${fn:length(files) ne 0 }">
+                	<div class="cont">
+	                	<ul>
+	                		<c:forEach items="${files }" var="item">
+	                			<li>
+	                				<a href="<c:url value="/upload/get/${item.id }"/>">${item.name }</a>
+	                			</li>
+	                		</c:forEach>
+	                	</ul>
+                	</div>
+                </c:if>
 				<div class="bt_wrap">
 					<a href="<c:url value="/notice/"/>" class="bt1 on">목록</a>
 					<a href="<c:url value="/board/edit"/>" class="bt1">수정</a>
-					<a href="<c:url value="/board/write"/>" class="bt1">글쓰기</a>
+					<a href="javascript:deleteBoard('${board.id}')" class="bt1">삭제</a>
 				</div>
 			</div>
 		</div>

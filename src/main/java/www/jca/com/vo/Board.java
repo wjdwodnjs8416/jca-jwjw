@@ -15,6 +15,7 @@ public class Board extends Paging{
 	public static final int TYPE_MEMBER = 3;
 	public static final int TYPE_SPEAKER = 4;
 	public static final int TYPE_FREE = 5;
+	public static final int TYPE_ALL = 0;
 	
 	public static final int TYPE_GROUP = 7;
 	public static final int PAGE_SIZE_NORMAL = 10;
@@ -45,4 +46,5 @@ public class Board extends Paging{
 	int replyCnt;
 	String boardName;
 	String language;
+	String thumbnail;
 }

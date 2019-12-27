@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!doctype html>
 <html>
 <head>
@@ -24,13 +26,25 @@
 				<div class="board_list_type1">
 					<c:forEach items="${list }" var="item">
 					<div class="item">
-						<div class="image"><a href="#"><img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진"></a></div>
+						<div class="image">
+							<a href="<c:url value="/notice/view?id=${item.id }"/>">
+								<c:choose>
+									<c:when test="${not empty item.thumbnail }">
+										<img src="<c:url value="${item.thumbnail }" />"/>
+									</c:when>
+									<c:otherwise>
+										<img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진">
+									</c:otherwise>
+								</c:choose>
+								
+							</a>
+						</div>
 						<div class="cont">
-							<div class="category">학원소식</div>
+							<div class="category">${item.boardName }</div>
 							<div class="title"><a href="<c:url value="/notice/view?id=${item.id }"/>">${item.title }</a></div>
 							<div class="etc">
 								<span>부원장</span>
-								<span>2019.11.12</span>
+								<span><fmt:formatDate value="${item.wdate}" pattern="yyyy-MM-dd" /></span>
 							</div>
 						</div>
 					</div>

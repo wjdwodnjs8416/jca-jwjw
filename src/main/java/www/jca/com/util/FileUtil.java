@@ -30,9 +30,7 @@ public class FileUtil {
 		logger.info("path: " + path);
 		
 		StringBuilder builder = new StringBuilder()
-				.append(path).append(File.separator).append("tomcat")
-				.append(File.separator).append("webapps").append(File.separator)
-				.append("repository").append(File.separator)
+				.append(path).append(File.separator)
 				.append("upload").append(File.separator);
 		
 		File file = new File(builder.toString());
