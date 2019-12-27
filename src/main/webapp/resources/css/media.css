@@ -14,8 +14,8 @@
     }
 
     #header .logo img {
-        height: 20px;
-        margin-top: 20px;
+        height: 24px;
+        margin-top: 18px;
     }
 
     #gnbWrap {
@@ -53,9 +53,31 @@
     }
 
     #footerWrap {
-        padding: 10px 0;
-        font-size: 1.2rem;
+    	min-height: auto;
+        padding: 16px 0 56px 0;
     }
+    
+	#footer {
+		width: 100%;
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+
+	#footer .text ul {
+		margin-bottom: 0;
+	}
+
+	#footer .text ul li {
+		margin-left: 0;
+		margin-right: 10px;
+	}
+
+	#fixedMenu {
+		position: fixed;
+		top: auto;
+		bottom: 20px;
+		right: 20px;
+	}
 
     .idx_slider_wrap {
         margin-bottom: 20px;
@@ -151,7 +173,6 @@
 
     .board_list_type1 .image img {
         height: 120px;
-        margin-bottom: 10px;
     }
 
     .board_list_type1 .cont {
