@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="board_list_wrap">
-				<div class="board_list_type3">
+				<div class="board_list_type1">
 					<c:forEach items="${list }" var="item">
 						<div class="item">
 							<div class="image">
@@ -77,21 +77,21 @@
 							</div>
 						</div>
 					</c:forEach>
-					
-				<!--
-				<div class="page_wrap">
-					<a href="javascript:pageGo(1)" class="bt first">맨 처음 페이지로 가기</a>
-					<a href="javascript:pageGo(1)" class="bt prev">이전 페이지로 가기</a>
-					<a href="javascript:pageGo(1)" class="num on">1</a>
-					<a href="javascript:pageGo(1)" class="num">2</a>
-					<a href="javascript:pageGo(1)" class="num">3</a>
-					<a href="javascript:pageGo(1)" class="bt next">다음 페이지로 가기</a>
-					<a href="javascript:pageGo(1)" class="bt last">마지막 페이지로 가기</a>
+					<!--
+					<div class="page_wrap">
+						<a href="javascript:pageGo(1)" class="bt first">맨 처음 페이지로 가기</a>
+						<a href="javascript:pageGo(1)" class="bt prev">이전 페이지로 가기</a>
+						<a href="javascript:pageGo(1)" class="num on">1</a>
+						<a href="javascript:pageGo(1)" class="num">2</a>
+						<a href="javascript:pageGo(1)" class="num">3</a>
+						<a href="javascript:pageGo(1)" class="bt next">다음 페이지로 가기</a>
+						<a href="javascript:pageGo(1)" class="bt last">마지막 페이지로 가기</a>
+					</div>
+					<div class="bt_wrap">
+						<a href="#" class="bt1">더 보기</a>
+					</div>
+					-->
 				</div>
-				<div class="bt_wrap">
-					<a href="#" class="bt1">더 보기</a>
-				</div>
-				-->
 			</div>
 		</div>
 		<div id="footerWrap"></div>

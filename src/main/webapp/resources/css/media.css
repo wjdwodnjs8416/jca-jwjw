@@ -1,4 +1,4 @@
-@media ( max-width: 800px ) {
+@media ( max-width: 1000px ) {
     #wrap {
         min-width: 320px;
     }
@@ -58,7 +58,6 @@
     }
     
 	#footer {
-		width: 100%;
 		padding: 0 20px;
 		box-sizing: border-box;
 	}
@@ -112,7 +111,7 @@
     .contTitle {
         height: auto;
         margin-bottom: 0;
-        padding: 30px 20px;
+        padding: 10px 20px 30px 20px;
         box-sizing: border-box;
         background: none;
         text-align: left;
@@ -152,7 +151,7 @@
         font-size: 1.3rem;
         word-break: keep-all;
     }
-
+/*
     .board_list_type1 .item {
         width: calc( 50% - 10px );
         margin-top: 20px;
@@ -171,10 +170,6 @@
         margin-left: 0;
     }
 
-    .board_list_type1 .image img {
-        height: 120px;
-    }
-
     .board_list_type1 .cont {
         font-size: 1.1rem;
     }
@@ -190,7 +185,53 @@
     .board_list_type1 .etc span:first-child {
         margin-right: 2px;
     }
+*/
 
+    .board_list_type1 .item {
+		position: relative;
+		width: 100%;
+		min-height: 120px;
+		margin: 20px 0 0 0;
+		padding: 20px 120px 20px 20px;
+		box-sizing: border-box;
+		border-radius: 10px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
+    
+    .board_list_type1 .item:nth-child(-n+3) {
+    	margin-top: 20px;
+    }
+    
+    .board_list_type1 .item:first-child {
+    	margin-top: 0;
+    }
+    
+    .board_list_type1 .image {
+    	position: absolute;
+    	top: 20px;
+    	right: 20px;
+    	width: 80px;
+    	height: 80px;
+    	padding-bottom: 0;
+    	border-radius: 25px;
+    }
+    
+
+    .board_list_type1 .category {
+    	font-size: 1.1rem;
+    	color: #00bcd4;
+    }
+
+    .board_list_type1 .title {
+        margin: 5px 0;
+        font-size: 1.3rem;
+    }
+
+    .board_list_type1 .etc {
+        font-size: 1.1rem;
+        color: #777;
+    }
+    
     .board_list_type2 .item {
         padding: 10px 0;
     }
@@ -209,43 +250,6 @@
         display: none;
     }
     
-    .board_list_type3 .item {
-		position: relative;
-		min-height: 120px;
-		margin-top: 20px;
-		padding: 20px 120px 20px 20px;
-		box-sizing: border-box;
-		border-radius: 10px;
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-	}
-    
-    .board_list_type3 .image {
-    	position: absolute;
-    	top: 20px;
-    	right: 20px;
-    }
-    
-    .board_list_type3 .image img {
-		width: 80px;
-		height: 80px;
-		border-radius: 30px;
-	}
-    
-    .board_list_type3 .category {
-    	font-size: 1.1rem;
-    	color: #00bcd4;
-    }
-
-    .board_list_type3 .title {
-        margin: 5px 0;
-        font-size: 1.3rem;
-    }
-
-    .board_list_type3 .etc {
-        font-size: 1.1rem;
-        color: #777;
-    }
-
     .board_list_wrap .page_wrap {
         margin-top: 20px;
     }
