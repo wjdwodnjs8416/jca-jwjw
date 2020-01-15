@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.poi.ss.util.ImageUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +23,7 @@ import www.jca.com.vo.FileInfo;
 import www.jca.com.vo.PhotoInfo;
 import www.jca.com.vo.UserVO;
 
-@RequestMapping("/notice")
+@RequestMapping("/board")
 @Controller
 public class NoticeController extends JCAController implements BoardController<Board>{
 	final int BOARD_TYPE = 1;
@@ -50,10 +50,44 @@ public class NoticeController extends JCAController implements BoardController<B
 		return mv;
 	}
 	
+	private int getType(String input) {
+		if(input.equalsIgnoreCase("notice")) {
+			return Board.TYPE_NOTICE;
+		}else if(input.equalsIgnoreCase("class")) {
+			return Board.TYPE_CLASS;
+		}else if(input.equalsIgnoreCase("video")) {
+			return Board.TYPE_VIDEO;
+		}else if(input.equalsIgnoreCase("note")) {
+			return Board.TYPE_NOTE;
+		}else if(input.equalsIgnoreCase("project")) {
+			return Board.TYPE_PROJECT;
+		}else if(input.equalsIgnoreCase("news")) {
+			return Board.TYPE_NEWS;
+		}else if(input.equalsIgnoreCase("book")) {
+			return Board.TYPE_BOOK;
+		}
+		return 0;
+	}
+	@RequestMapping(value="/{name}", method=RequestMethod.GET)
+	public ModelAndView getListView(ModelAndView mv, Board model,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
+		
+		int count = service.count(model);
+		model.setTotalCount(count);
+		
+		List<Board> boardList = service.select(model);
+		mv.addObject("list", boardList);
+		mv.addObject("listUrl", "/board/"+typeOfBoard);
+		mv.addObject("paging", model);
+		mv.setViewName("/notice/list");
+		return mv;
+	}
 	@Override	
-	@RequestMapping(value="/view", method = RequestMethod.GET)
-	public ModelAndView getDetailView(ModelAndView mv, Board model) {
-		model.setBoardType(BOARD_TYPE);
+	@RequestMapping(value="/{name}/view", method = RequestMethod.GET)
+	public ModelAndView getDetailView(ModelAndView mv, Board model,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
 		Board board = service.selectOne(model);
 		
 		FileInfo input = new FileInfo();
@@ -67,31 +101,39 @@ public class NoticeController extends JCAController implements BoardController<B
 		mv.addObject("photos", photos);
 		mv.addObject("files", files);
 		mv.addObject("board", board);
+		mv.addObject("listUrl", "/board/"+typeOfBoard);
 		mv.setViewName("/notice/view");
 		return mv;
 	}
 
 	@Override
-	@RequestMapping(value="/edit", method = RequestMethod.GET)
-	public ModelAndView getEditView(ModelAndView mv, Board model, HttpServletRequest request) {
-		model.setBoardType(BOARD_TYPE);
+	@RequestMapping(value="/{name}/edit", method = RequestMethod.GET)
+	public ModelAndView getEditView(ModelAndView mv, Board model, HttpServletRequest request,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
+		
+		Board board = service.selectOne(model);
+		
+		mv.addObject("board", board);
 		mv.setViewName("/notice/edit");
 		return mv;
 	}
 	
 	@Override
-	@RequestMapping(value="/write", method = RequestMethod.GET)
-	public ModelAndView getWriteView(ModelAndView mv, Board model, HttpServletRequest request) {
-		model.setBoardType(BOARD_TYPE);
+	@RequestMapping(value="/{name}/write", method = RequestMethod.GET)
+	public ModelAndView getWriteView(ModelAndView mv, Board model, HttpServletRequest request,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
 		mv.setViewName("/notice/write");
 		return mv;
 	}
 	
 	@Override
 	@ResponseBody
-	@RequestMapping(value="/deprecated", method=RequestMethod.POST, produces = "application/json; charset=utf8")
-	public String write(Board model) {
-		model.setBoardType(BOARD_TYPE);
+	@RequestMapping(value="/{name}/deprecated", method=RequestMethod.POST, produces = "application/json; charset=utf8")
+	public String write(Board model,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
 		JSONObject json = new JSONObject();
 		UserVO user = getUser();
 		if(user != null) {
@@ -105,12 +147,13 @@ public class NoticeController extends JCAController implements BoardController<B
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/write", method=RequestMethod.POST, produces = "application/json; charset=utf8")
+	@RequestMapping(value="/{name}/write", method=RequestMethod.POST, produces = "application/json; charset=utf8")
 	public ModelAndView writeWithAttach(Board model, 
 			@RequestParam(value="files", required = false)String files,
 			@RequestParam(value="images", required = false)String images,
-			ModelAndView mv) {
-		model.setBoardType(BOARD_TYPE);
+			ModelAndView mv,
+			@PathVariable(value="name", required=true)String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
 		
 		JSONObject json = new JSONObject();
 		UserVO user = getUser();
@@ -130,25 +173,31 @@ public class NoticeController extends JCAController implements BoardController<B
 			photoInfoService.update(fileUtil.parsePhotoInfo(images.split(","), model.getId()));
 		}
 		
-		mv.setViewName("redirect:/notice/");
+		mv.setViewName("redirect:/board/"+typeOfBoard+"/");
 		return mv;
 	}
 	
 	@Override
-	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	@RequestMapping(value="/{name}/edit", method=RequestMethod.POST)
 	@ResponseBody
-	public String edit(Board model) {
-		model.setBoardType(BOARD_TYPE);
+	public String edit(Board model,
+			@PathVariable(value="name")String typeOfBoard) {
+		logger.info(model.toString());
+		
+		model.setBoardType(getType(typeOfBoard));
 		JSONObject json = new JSONObject();
+		int result = service.update(model);
+		json.put("result", result);
 		
 		return json.toString();
 	}
 
 	@Override
 	@ResponseBody
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public String delete(Board model) {
-		model.setBoardType(BOARD_TYPE);
+	@RequestMapping(value="/{name}/delete", method=RequestMethod.POST)
+	public String delete(Board model,
+			@PathVariable(value="name")String typeOfBoard) {
+		model.setBoardType(getType(typeOfBoard));
 		JSONObject json = new JSONObject();
 		logger.info(model.toString());
 		

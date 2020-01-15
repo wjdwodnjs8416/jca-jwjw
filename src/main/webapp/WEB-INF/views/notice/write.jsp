@@ -36,7 +36,7 @@
 				}).done(function(json){
 					if(json.result > 0){
 						alert("작성 완료!");
-						window.location.replace("/notice/");
+						window.location.replace("/board/notice/");
 					}
 				});
 			}
@@ -67,7 +67,7 @@
             </div>
 			<div class="board_write_wrap">
                 <div class="board_write">
-                    <form action="<c:url value="/notice/write"/>" method="post">
+                    <form action="<c:url value="/board/notice/write"/>" method="post">
                         <dl>
                             <dt>카테고리</dt>
                             <dd>
@@ -101,7 +101,7 @@
                             </dd>
                         </dl>
                         <dl class="file" id="dropzone-file">
-                            <dt>첨부파</dt>
+                            <dt>첨부파일</dt>
                             <dd>
                                 <input id="fileupload" type="file" 
 										data-url="<c:url value="/upload/file"/>" multiple>

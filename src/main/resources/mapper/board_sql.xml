@@ -21,7 +21,6 @@
 	<update id="update" parameterType="board">
 		UPDATE Board
 		<set>
-			viewCount = ${viewCount},
 			title = '${title}',
 			content = '${content}'
 		</set>

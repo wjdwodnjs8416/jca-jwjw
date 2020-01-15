@@ -52,7 +52,7 @@
 					<c:forEach items="${list }" var="item">
 						<div class="item">
 							<div class="image">
-								<a href="<c:url value="/notice/view?id=${item.id }"/>">
+								<a href="<c:url value="/board/view?id=${item.id }"/>">
 									<c:choose>
 										<c:when test="${not empty item.thumbnail }">
 											<img src="<c:url value="${item.thumbnail }" />"/>
@@ -66,7 +66,7 @@
 							<div class="cont">
 								<div class="category">${item.boardName }</div>
 								<div class="title">
-									<a href="<c:url value="/notice/view?id=${item.id }"/>">${item.title }</a>
+									<a href="<c:url value="/board/view?id=${item.id }"/>">${item.title }</a>
 								</div>
 								<div class="etc">
 									<span>부원장</span>

@@ -9,25 +9,25 @@ $(".m_gnb > ul > li").click(function(){
     $(this).addClass("on");
 });
 </script>
-<li><a href="/notice/">학원소식</a></li>
+<li><a href="/board/notice/">학원소식</a></li>
 <li>
     <a href="#">수업안내</a>
     <ul>
-        <li><a href="/class/">수업안내</a></li>
-        <li><a href="/video/">동영상 강의</a></li>
+        <li><a href="/board/class/">수업안내</a></li>
+        <li><a href="/board/video/">동영상 강의</a></li>
     </ul>
 </li>
 <li>
     <a href="#">수강생 활동</a>
     <ul>
-        <li><a href="/note/">활동노트</a></li>
-        <li><a href="/project/">수강생 작품</a></li>
+        <li><a href="/board/note/">활동노트</a></li>
+        <li><a href="/board/project/">수강생 작품</a></li>
     </ul>
 </li>
 <li>
     <a href="#" onclick="return false;">코딩뉴스</a>
     <ul>
-        <li><a href="/news/">코딩뉴스</a></li>
-        <li><a href="/book/">추천도서</a></li>
+        <li><a href="/board/news/">코딩뉴스</a></li>
+        <li><a href="/board/book/">추천도서</a></li>
     </ul>
 </li>

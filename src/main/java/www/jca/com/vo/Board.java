@@ -11,10 +11,12 @@ import lombok.ToString;
 @Setter
 public class Board extends Paging{
 	public static final int TYPE_NOTICE = 1;
-	public static final int TYPE_NEWS = 2;
-	public static final int TYPE_MEMBER = 3;
-	public static final int TYPE_SPEAKER = 4;
-	public static final int TYPE_FREE = 5;
+	public static final int TYPE_CLASS = 2;
+	public static final int TYPE_VIDEO = 3;
+	public static final int TYPE_NOTE = 4;
+	public static final int TYPE_PROJECT = 5;
+	public static final int TYPE_NEWS = 6;
+	public static final int TYPE_BOOK = 7;
 	public static final int TYPE_ALL = 0;
 	
 	public static final int TYPE_GROUP = 7;

@@ -3,6 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html>
 <head>
@@ -45,7 +46,7 @@
                     <div class="category">학원소식</div>
                     <div class="etc">
                         <span>${board.writer }</span>
-                        <span>${board.wdate }</span>
+                        <span><fmt:formatDate value="${board.wdate }" pattern="yyyy-MM-dd"/></span>
                     </div>
                     <div class="title"><a href="#">${board.title }</a></div>
                     <%--
@@ -69,8 +70,8 @@
                 	</div>
                 </c:if>
 				<div class="bt_wrap">
-					<a href="<c:url value="/notice/"/>" class="bt1 on">목록</a>
-					<a href="<c:url value="/board/edit"/>" class="bt1">수정</a>
+					<a href="<c:url value="${listUrl }"/>" class="bt1 on">목록</a>
+					<a href="<c:url value="${listUrl }/edit?id=${board.id }"/>" class="bt1">수정</a>
 					<a href="javascript:deleteBoard('${board.id}')" class="bt1">삭제</a>
 				</div>
 			</div>
