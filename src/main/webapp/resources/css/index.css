@@ -42,6 +42,18 @@
 	background: url(../img/index/slider3.png) no-repeat 100% 100% /430px;
 }
 
+.idx_slider_wrap .item4 {
+	height: 400px;
+	padding-top: 68px;
+	box-sizing: border-box;
+	background: #ecc6d5;
+	text-align: center;
+}
+
+.idx_slider_wrap .item4 img {
+	margin: 0 auto;
+}
+
 .idx_slider_wrap .item a {
 	display: inline-block;
 	padding: 6px 12px;

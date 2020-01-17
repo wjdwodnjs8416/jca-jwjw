@@ -14,6 +14,9 @@
 		<div id="containerWrap">
 			<div class="idx_slider_wrap">
 				<div class="idx_slider">
+					<div class="item4">
+						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/slider4.png" alt="코딩놀이터 신청"></a>
+					</div>
 					<div class="item item2">
 						<div>
 							<img src="<c:url value="/resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
@@ -32,6 +35,9 @@
 			</div>
 			<div class="m_idx_slider_wrap">
 				<div class="m_idx_slider">
+					<div class="item4">
+						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/m_slider4.png" alt="코딩놀이터 신청"></a>
+					</div>
 					<div class="item item2">
 						<a href="/curriculum/"><img src="<c:url value="/resources/img/index/m_slider2.png"/>" alt="코딩앤플레이 주니어"></a>
 					</div>
