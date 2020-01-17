@@ -289,7 +289,7 @@
 								<div class="info">
 									<dl>
 										<dt>대상</dt>
-										<dd>중학생 이상</dd>
+										<dd>성인</dd>
 									</dl>
 									<dl>
 										<dt>수업시간</dt>
