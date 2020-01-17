@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="headerWrap"></div>
+		<c:import url="/inc/header"></c:import>
 		<div id="containerWrap">
 			<div class="contTitle">
 				<div>
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="footerWrap"></div>
+		<c:import url="/inc/footer"></c:import>
 	</div>
 </body>
 </html>

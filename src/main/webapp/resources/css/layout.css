@@ -1,12 +1,18 @@
+@media ( max-width: 1000px ) {
+	#wrap {
+		min-width: 320px;
+	}
+}
+
 #headerWrap {
-    position: relative;;
-    width: 100%;
-    height: 100px;
-    box-sizing: border-box;
-    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
-    z-index: 10;
+	position: relative;;
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+	z-index: 10;
 }
 
 #headerWrap .top {
@@ -35,138 +41,161 @@
 }
 
 #header {
-    width: calc( 100% - 40px);
-    max-width: 1000px;
-    margin: 0 auto;
+	width: calc( 100% - 40px);
+	max-width: 1000px;
+	margin: 0 auto;
 }
 #header .logo {
-    float: left;
-    font-size: 0;
+	float: left;
+	font-size: 0;
 }
 
 #header .logo img {
-    height: 26px;
-    margin-top: 22px;
+	height: 26px;
+	margin-top: 22px;
+}
+
+@media ( max-width: 1000px ) {
+	#headerWrap {
+		height: 88px;
+	}
+
+	#header {
+		width: 100%;
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+
+	#header .logo img {
+		height: 24px;
+		margin-top: 18px;
+	}
+}
+
+@media ( max-width: 600px ) {
+	#headerWrap {
+		box-shadow: none;
+	}
 }
 
 #gnbWrap {
-    float: right;
-    font-size: 0;
+	float: right;
+	font-size: 0;
 }
 
 #gnbWrap > ul,
 #gnbWrap > a {
-    display: inline-block;
-    vertical-align: middle;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 #gnbWrap > ul > li {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 #gnbWrap > ul > li > a {
-    display: block;
-    height: 70px;
-    padding: 24px 40px 0 0;
-    box-sizing: border-box;
-    font-size: 1.5rem;
+	display: block;
+	height: 70px;
+	padding: 24px 40px 0 0;
+	box-sizing: border-box;
+	font-size: 1.5rem;
 }
 
 #gnbWrap > ul > li:hover > a {
-    color: #00bcd4;
+	color: #00bcd4;
 }
 
 #gnbWrap > ul > li > ul {
-    position: absolute;
-    top: 70px;
-    left: -20px;
-    display: none;
-    width: 160px;
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+	position: absolute;
+	top: 70px;
+	left: -20px;
+	display: none;
+	width: 160px;
+	background: #fff;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }
 
 #gnbWrap > ul > li:hover > ul {
-    display: block;
+	display: block;
 }
 
 #gnbWrap > ul > li > ul > li {
-    border-top: 1px dashed #ddd;
+	border-top: 1px dashed #ddd;
 }
 
 #gnbWrap > ul > li > ul > li:first-child {
-    border-top: 0;
+	border-top: 0;
 }
 
 #gnbWrap > ul > li > ul > li > a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 1.4rem;
+	display: block;
+	padding: 12px 20px;
+	font-size: 1.4rem;
 }
 
 #gnbWrap > ul > li > ul > li > a:hover {
-    background: #00bcd4;
-    color: #fff;
+	background: #00bcd4;
+	color: #fff;
 }
 
 #gnbWrap > a {
-    margin-left: 20px;
+	margin-left: 20px;
 }
 
 #gnbWrap > a:nth-of-type(1) {
-    margin-left: 0;
+	margin-left: 0;
 }
 
 #gnbWrap > a.menu_opener {
-    display: none;
+	display: none;
 }
 
 #gnbWrap > a > img {
-    width: 30px;
+	width: 30px;
 }
 
 #m_gnbWrap {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 #m_gnbWrap .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 #m_gnbWrap .m_gnb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60%;
+	height: 100%;
+	background: #fff;
 }
 
 #m_gnbWrap .m_gnb .title {
-    height: 88px;
-    padding: 35px 20px 0 15px;
-    box-sizing: border-box;
-    text-align: center;
+	height: 88px;
+	padding: 35px 20px 0 15px;
+	box-sizing: border-box;
+	text-align: center;
 }
 
 #m_gnbWrap .m_gnb .title img {
-    height: 20px;
+	height: 20px;
 }
 
 #m_gnbWrap .m_gnb > ul {
-    padding: 0 20px;
-    background: #00bcd4;
+	padding: 0 20px;
+	background: #00bcd4;
 }
 
 #m_gnbWrap .m_gnb > ul > li {
@@ -178,28 +207,25 @@
 }
 
 #m_gnbWrap .m_gnb > ul > li > a {
-    display: block;
-    padding: 10px 0;
-    background: #00bcd4;
-    font-size: 1.4rem;
-    color: #fff;
-}
-
-#m_gnbWrap .m_gnb > ul > li.on {
+	display: block;
+	padding: 10px 0;
+	background: #00bcd4;
+	font-size: 1.4rem;
+	color: #fff;
 }
 
 #m_gnbWrap .m_gnb > ul > li.on > a {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 #m_gnbWrap .m_gnb > ul > li > ul {
-    display: none;
-    padding: 15px 0;
-    border-top: 1px dashed rgba(255, 255, 255, 0.3);
+	display: none;
+	padding: 15px 0;
+	border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 #m_gnbWrap .m_gnb > ul > li.on > ul {
-    display: block;
+	display: block;
 }
 
 #m_gnbWrap .m_gnb > ul > li > ul > li > a {
@@ -222,52 +248,114 @@
 	background: #fff;
 }
 
-
 #m_gnbWrap .m_gnb > ul > li > ul > li:first-child > a {
 	margin-top: 0;
 }
 
+@media ( max-width: 1000px ) {
+	#gnbWrap {
+		margin-top: 16px;
+	}
+
+	#gnbWrap > ul {
+		display: none;
+	}
+
+	#gnbWrap > a {
+		margin-left: 0;
+		margin-right: 12px;
+	}
+
+	#gnbWrap > a.menu_opener {
+		display: inline-block;
+		margin-right: 0;
+	}
+
+	#gnbWrap > a > img {
+		width: 24px;
+	}
+
+	#m_gnbWrap {
+		display: none;
+	}
+
+	#m_gnbWrap.on {
+		display: block;
+	}
+}
+
 #containerWrap {
-    padding-bottom: 60px;
+
 }
 
 .contTitle {
-    display: table;
-    width: 100%;
-    margin-bottom: 60px;
-    height: 175px;
-    background: #00bcd4; /* Old browsers */
-    background: -moz-linear-gradient(left,  #00bcd4 0%, #8bc34a 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #00bcd4 0%,#8bc34a 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #00bcd4 0%,#8bc34a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bcd4', endColorstr='#8bc34a',GradientType=1 ); /* IE6-9 */
-    text-align: center;
+	display: table;
+	width: 100%;
+	height: 175px;
+	background: #00bcd4; /* Old browsers */
+	background: -moz-linear-gradient(left,  #00bcd4 0%, #8bc34a 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #00bcd4 0%,#8bc34a 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #00bcd4 0%,#8bc34a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bcd4', endColorstr='#8bc34a',GradientType=1 ); /* IE6-9 */
+	text-align: center;
 }
 
 .contTitle > div {
-    display: table-cell;
-    vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .contTitle strong {
-    font-size: 2.8rem;
-    color: #fff;
+	font-size: 2.8rem;
+	color: #fff;
 }
 
 .contTitle p {
-    margin-top: 5px;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
+	margin-top: 5px;
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .contTitle br {
-    display: none;
+	display: none;
+}
+
+@media ( max-width: 1000px ) {
+	#containerWrap {
+		
+	}
+	
+	.contTitle {
+		height: auto;
+		margin-bottom: 0;
+		padding: 10px 20px 0 20px;
+		box-sizing: border-box;
+		background: none;
+		text-align: left;
+	}
+
+	.contTitle strong {
+		font-size: 2.4rem;
+		color: #000;
+	}
+
+	.contTitle p {
+		font-size: 1.3rem;
+		color: #000;
+		word-break: keep-all;
+	}
+
+	.contTitle p span {
+		display: block;
+		margin-top: 2px;
+		font-size: 1rem;
+	}
 }
 
 #footerWrap {
 	min-height: 40px;
-    padding: 18px 0;
-    border-top: 1px solid #eee;
+	padding: 18px 0;
+	border-top: 1px solid #eee;
 }
 
 #footer {
@@ -275,7 +363,7 @@
 	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
-    text-align: left;
+	text-align: left;
 }
 
 #footer .text ul {
@@ -342,4 +430,32 @@
 #fixedMenu a.bt_insta {
 	background-image: url(/resources/img/comm/bt_insta.png);
 	background-size: 100%;
+}
+
+@media ( max-width: 1000px ) {
+	#footerWrap {
+		min-height: auto;
+		padding: 16px 0 56px 0;
+	}
+	
+	#footer {
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+
+	#footer .text ul {
+		margin-bottom: 0;
+	}
+
+	#footer .text ul li {
+		margin-left: 0;
+		margin-right: 10px;
+	}
+
+	#fixedMenu {
+		position: fixed;
+		top: auto;
+		bottom: 20px;
+		right: 20px;
+	}
 }

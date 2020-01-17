@@ -33,11 +33,18 @@ textarea {
     font-size: 1.2rem;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ddd;
     font-size: 1.2rem;
+}
+
+input[type="button"] {
+	border: none;
+	cursor: pointer;
 }
 
 select {
@@ -63,14 +70,16 @@ select::-ms-expand { display:none; }
 
 @media ( max-width: 800px ) {
     textarea {
-        padding: 6px;
+        padding: 8px;
     }
 
-    input[type="text"] {
-        padding: 6px;
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"] {
+        padding: 8px;
     }
 
     select {
-        padding: 6px;
+        padding: 8px;
     }
 }

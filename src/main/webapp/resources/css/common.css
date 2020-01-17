@@ -1,6 +1,6 @@
 .bt_wrap {
 	margin-top: 30px;
-    text-align: center;
+	text-align: center;
 }
 
 a.bt1,
@@ -19,14 +19,15 @@ input.bt1 {
 	color: #00bcd4;
 }
 
-a.bt1:first-child,
-input.bt1:first-child {
+a.bt1:nth-of-type(1),
+input.bt1:nth-of-type(1) {
 	margin-left: 0;
 }
 
 a.bt1.on,
 input.bt1.on {
 	background-color: #00bcd4 !important;
+	font-weight: 600;
 	color: #fff;
 }
 
@@ -57,15 +58,96 @@ input.bt2.on {
 	color: #fff;
 }
 
+a.bt3,
+input.bt3 {
+	display: block;
+	width: 100%;
+	padding: 9px 5px;
+	box-sizing: border-box;
+	border-radius: 2px;
+	border: 1px solid #00bcd4;
+	background: transparent;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: #00bcd4;
+}
+
+a.bt3.on,
+input.bt3.on {
+	background-color: #00bcd4 !important;
+	color: #fff;
+}
+
 @media ( max-width: 800px ) {
-    .bt_wrap {
+	.bt_wrap {
 		margin-top: 20px;
-		padding-bottom: 10px;
 	}
 	a.bt1,
 	input.bt1 {
 		min-width: 76px;
 		padding: 5px 8px;
 		font-size: 1.3rem;
+	}
+}
+
+.video_wrap {
+	margin-top: 24px;
+}
+
+.tab_wrap {
+	display: table;
+	width: 100%;
+	max-width: 1000px;
+	margin: 60px auto 0 auto;
+	box-sizing: border-box;
+	font-size: 0;
+}
+
+.tab_wrap > a {
+	display: table-cell;
+	width: 25%;
+	padding: 12px 0;
+	box-sizing: border-box;
+	border: 1px solid #00bcd4;
+	border-left: 0;
+	text-align: center;
+	font-size: 1.6rem;
+	color: #00bcd4;
+	
+}
+
+.tab_wrap > a:first-child {
+	border-left: 1px solid #00bcd4;
+	border-radius: 5px 0 0 5px;
+}
+
+.tab_wrap > a:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.tab_wrap > a.on {
+	background: #00bcd4;
+	font-weight: 600;
+	color: #fff;
+}
+
+.tab_cont > div {
+	display: none;
+}
+
+.tab_cont > div:first-child {
+	display: block;
+}
+
+@media ( max-width: 1000px ) {
+	.tab_wrap {
+		margin-top: 30px;
+		padding: 0 20px;
+	}
+	
+	.tab_wrap > a {
+		padding: 8px 0;
+		font-size: 1.4rem;
 	}
 }

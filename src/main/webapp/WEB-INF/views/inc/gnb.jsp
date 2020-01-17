@@ -13,7 +13,9 @@ $(".m_gnb > ul > li").click(function(){
 <li>
     <a href="#">수업안내</a>
     <ul>
-        <li><a href="/board/class/">수업안내</a></li>
+        <li><a href="/curriculum/">교육과정</a></li>
+        <li><a href="/board/class/">개강안내</a></li>
+        <li><a href="/board/files/">수업자료</a></li>
         <li><a href="/board/video/">동영상 강의</a></li>
     </ul>
 </li>

@@ -10,29 +10,22 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="headerWrap"></div>
+		<c:import url="/inc/header"></c:import>
 		<div id="containerWrap">
 			<div class="idx_slider_wrap">
 				<div class="idx_slider">
-					<div class="item item1">
-						<div>
-							<img src="<c:url value="/resources/img/index/slider1_txt.png"/>" alt="2020 정보처리기사 실기대비반">
-							<a href="#">자세히 보기</a>
-							<a href="#">수강신청</a>
-						</div>
-					</div>
 					<div class="item item2">
 						<div>
 							<img src="<c:url value="/resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
-							<a href="#">자세히 보기</a>
-							<a href="#">수강신청</a>
+							<a href="/curriculum/">자세히 보기</a>
+							<a href="http://naver.me/5vR5uJrV" target="_blank">수강신청</a>
 						</div>
 					</div>
 					<div class="item item3">
 						<div>
 							<img src="<c:url value="/resources/img/index/slider3_txt.png"/>" alt="코딩앤플레이 주니어">
-							<a href="#">자세히 보기</a>
-							<a href="#">수강신청</a>
+							<a href="/curriculum/">자세히 보기</a>
+							<a href="http://naver.me/GmHjG05a" target="_blank">수강신청</a>
 						</div>
 					</div>
 				</div>
@@ -40,15 +33,15 @@
 			<div class="m_idx_slider_wrap">
 				<div class="m_idx_slider">
 					<div class="item item2">
-						<img src="<c:url value="/resources/img/index/m_slider2.png"/>" alt="코딩앤플레이 주니어">
+						<a href="/curriculum/"><img src="<c:url value="/resources/img/index/m_slider2.png"/>" alt="코딩앤플레이 주니어"></a>
 					</div>
 					<div class="item item1">
-						<img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내">
+						<a href="/curriculum/"><img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내"></a>
 					</div>
 				</div>
 			</div>
 			<div class="board_list_wrap">
-				<div class="board_list_type1">
+				<div class="board_list_type2">
 					<c:forEach items="${list }" var="item">
 						<div class="item">
 							<div class="image">
@@ -94,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="footerWrap"></div>
+		<c:import url="/inc/footer"></c:import>
 	</div>
 </body>
 </html>
