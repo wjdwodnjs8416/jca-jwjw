@@ -33,7 +33,7 @@
 			board.*,
 			(SELECT COUNT(*) FROM FileInfo WHERE boardId = board.id) AS fileCnt,
 			(SELECT COUNT(*) FROM PhotoInfo WHERE boardId = board.id) AS pictureCnt,
-			(SELECT boardName FROM BoardType WHERE id = board.boardType) AS boardName,
+			(SELECT title FROM BoardType WHERE id = board.boardType) AS boardName,
 			(SELECT COUNT(*) FROM Reply WHERE boardId = board.id) AS replyCnt,
 			usr.username AS writerName,
 			(SELECT url FROM PhotoInfo where boardId = board.id LIMIT 0,1) AS thumbnail

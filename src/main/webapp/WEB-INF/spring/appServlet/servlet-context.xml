@@ -15,5 +15,6 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
+	<resources mapping="/naverf675cf6b1b6414c160fbef13d581ae4e.html"  location="/WEB-INF/views/naverf675cf6b1b6414c160fbef13d581ae4e.html" order="0"/>
 	<resources mapping="/robots.txt"  location="/WEB-INF/views/robots.txt" order="0"/>
 </beans:beans>

@@ -30,7 +30,7 @@ import www.jca.com.security.CustomLogoutSuccessHandler;
 @EnableWebSecurity // 웹 보안설정
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	private static final String[] IGNORED_RESOURCE_LIST = new String[] {"/resources/**", "/robots.txt", "/sitemap.xml"};
+	private static final String[] IGNORED_RESOURCE_LIST = new String[] {"/resources/**", "/robots.txt", "/sitemap.xml", "/naverf675cf6b1b6414c160fbef13d581ae4e.html"};
 	@Autowired
 	private CustomAuthenticationSuccessHandler loginSuccessHandler;
 	

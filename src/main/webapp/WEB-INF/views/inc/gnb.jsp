@@ -9,27 +9,18 @@ $(".m_gnb > ul > li").click(function(){
     $(this).addClass("on");
 });
 </script>
-<li><a href="/board/notice/">학원소식</a></li>
-<li>
-    <a href="#">수업안내</a>
-    <ul>
-        <li><a href="/curriculum/">교육과정</a></li>
-        <li><a href="/board/class/">개강안내</a></li>
-        <li><a href="/board/files/">수업자료</a></li>
-        <li><a href="/board/video/">동영상 강의</a></li>
-    </ul>
-</li>
-<li>
-    <a href="#">수강생 활동</a>
-    <ul>
-        <li><a href="/board/note/">활동노트</a></li>
-        <li><a href="/board/project/">수강생 작품</a></li>
-    </ul>
-</li>
-<li>
-    <a href="#" onclick="return false;">코딩뉴스</a>
-    <ul>
-        <li><a href="/board/news/">코딩뉴스</a></li>
-        <li><a href="/board/book/">추천도서</a></li>
-    </ul>
-</li>
+
+<c:forEach items="${menus }" var="item">
+	<li>
+		<a href="${item.url }">${item.title }</a>
+		<c:if test="${fn:length(item.children) gt 0}">
+			<ul>
+				<c:forEach items="${item.children }" var="menu">
+					<li>
+						<a href="${menu.url }">${menu.title }</a>
+					</li>
+				</c:forEach>
+			</ul>
+		</c:if>
+	</li>
+</c:forEach>

@@ -1,5 +1,8 @@
 package www.jca.com.vo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,8 +17,11 @@ public class Menus {
 	String url;
 	Menus prev;
 	Menus next;
-	String title_en;
+	List<Menus> children;
 	
+	public Menus() {
+		this.children = new ArrayList<Menus>();
+	}
 	public static Menus newInstance(int id) {
 		Menus menu = new Menus();
 		menu.setId(id);
