@@ -3,6 +3,13 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div id="footerWrap">
+	<div class="top">
+		<div>
+			<a href="/member/signup">사용자 등록</a>
+			<a href="/member/login">로그인</a>
+			<a href="#">로그아웃</a>
+		</div>
+	</div>
 	<div id="footer">
 		<div class="text">
 			<ul>

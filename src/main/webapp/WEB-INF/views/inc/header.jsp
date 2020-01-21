@@ -17,7 +17,7 @@
         });
 
         // m_gnbWrap 닫기
-        $("#m_gnbWrap .bg").click(function(){
+        $(".menu_closer, #m_gnbWrap .bg").click(function(){
             $("#m_gnbWrap").removeClass("on");
             $(".m_gnb > ul > li").removeClass("on");
             $("html, body").css({
@@ -46,14 +46,6 @@
     });
 </script>
 <div id="headerWrap">
-	<div class="top">
-		<div>
-			<a href="#" style="color: blue;">현재 사이트 제작 중</a>
-			<a href="/member/signup">등록</a>
-			<a href="/member/login">로그인</a>
-			<a href="#">로그아웃</a>
-		</div>
-	</div>
 	<div id="header">
 	    <h1 class="logo"><a href="/"><img src="<c:url value="/resources/img/comm/logo.png"/>" alt="전주코딩학원"></a></h1>
 	    <div id="gnbWrap">
@@ -69,6 +61,9 @@
 	        <div class="m_gnb">
 	            <div class="title">
 	                <a href="/"><img src="<c:url value="/resources/img/comm/logo.png"/>" alt="전주코딩학원"></a>
+	                <a href="javascript:void(0);" class="menu_closer">
+	                	<img src="/resources/img/comm/header_menu_close.png" alt="메뉴 기">
+	                </a>
 	            </div>
 	            <ul></ul>
 	        </div>
