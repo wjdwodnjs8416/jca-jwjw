@@ -7,6 +7,7 @@
 <html>
 <head>
 	<c:import url="/inc/head"></c:import>
+	<link rel="stylesheet" href="<c:url value="/resources/css/index.css"/>">
 </head>
 <body>
 	<div id="wrap">
@@ -85,7 +86,7 @@
 											<img src="<c:url value="${item.thumbnail }" />"/>
 										</c:when>
 										<c:otherwise>
-											<img src="<c:url value="/resources/img/temp/1.jpeg"/>" alt="사진">
+											<img src="<c:url value="/resources/img/comm/no_img.gif"/>" alt="사진">
 										</c:otherwise>
 									</c:choose>
 								</a>

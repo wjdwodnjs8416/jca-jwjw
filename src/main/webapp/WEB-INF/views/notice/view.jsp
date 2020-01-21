@@ -54,21 +54,32 @@
                     
                     <div class="cont">${board.content }</div>
                     <div class="link">
-                        <strong>참고링크</strong>
-                        <a href="https://www.naver.com" target="_blank">https://www.naver.com</a>
+                    	<dl>
+                    		<dt>참고링크</dt>
+                    		<dd>
+                    			<ul>
+                    				<li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
+                    			</ul>
+                    		</dd>
+                    	</dl>
                     </div>
+	                <c:if test="${fn:length(files) ne 0 }">
+						<div class="file">
+							<dl>
+								<dt>첨부파일</dt>
+								<dd>
+									<ul>
+				                		<c:forEach items="${files }" var="item">
+				                			<li>
+				                				<a href="<c:url value="/upload/get/${item.id }"/>">${item.name }</a>
+				                			</li>
+				                		</c:forEach>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+	                </c:if>
                 </div>
-                <c:if test="${fn:length(files) ne 0 }">
-                	<div class="cont">
-	                	<ul>
-	                		<c:forEach items="${files }" var="item">
-	                			<li>
-	                				<a href="<c:url value="/upload/get/${item.id }"/>">${item.name }</a>
-	                			</li>
-	                		</c:forEach>
-	                	</ul>
-                	</div>
-                </c:if>
 				<div class="bt_wrap">
 					<a href="<c:url value="${listUrl }"/>" class="bt1 on">목록</a>
 					<input type="hidden" id="redirectUrl" value="${listUrl }"/>

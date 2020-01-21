@@ -81,13 +81,12 @@ input.bt3.on {
 
 @media ( max-width: 800px ) {
 	.bt_wrap {
-		margin-top: 20px;
+		margin-top: 24px;
 	}
 	a.bt1,
 	input.bt1 {
 		min-width: 76px;
 		padding: 5px 8px;
-		font-size: 1.3rem;
 	}
 }
 

@@ -321,15 +321,14 @@
 	}
 
 	.contTitle p {
-		font-size: 1.3rem;
+		line-height: 160%;
+		font-size: 1.4rem;
 		color: #000;
 		word-break: keep-all;
 	}
 
 	.contTitle p span {
 		display: block;
-		margin-top: 2px;
-		font-size: 1rem;
 	}
 }
 
