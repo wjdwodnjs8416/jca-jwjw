@@ -33,6 +33,7 @@
 @media ( max-width: 1000px ) {
 	#headerWrap {
 		height: 60px;
+		box-shadow: 0 0 8px #ddd;
 	}
 
 	#header {
@@ -49,7 +50,7 @@
 
 @media ( max-width: 600px ) {
 	#headerWrap {
-		box-shadow: none;
+	
 	}
 }
 
@@ -308,7 +309,7 @@
 	.contTitle {
 		height: auto;
 		margin-bottom: 0;
-		padding: 10px 20px 0 20px;
+		padding: 20px 20px 30px 20px;
 		box-sizing: border-box;
 		background: none;
 		text-align: left;

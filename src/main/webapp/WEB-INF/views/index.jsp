@@ -14,9 +14,6 @@
 		<div id="containerWrap">
 			<div class="idx_slider_wrap">
 				<div class="idx_slider">
-					<div class="item4">
-						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/slider4.png" alt="코딩놀이터 신청"></a>
-					</div>
 					<div class="item item2">
 						<div>
 							<img src="<c:url value="/resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
@@ -31,23 +28,54 @@
 							<a href="http://naver.me/GmHjG05a" target="_blank">수강신청</a>
 						</div>
 					</div>
+					<div class="item4">
+						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/slider4.png" alt="코딩놀이터 신청"></a>
+					</div>
 				</div>
 			</div>
-			<div class="m_idx_slider_wrap">
+			<div class="m_idx_slider_wrap" style="display: none;">
 				<div class="m_idx_slider">
-					<div class="item4">
-						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/m_slider4.png" alt="코딩놀이터 신청"></a>
-					</div>
 					<div class="item item2">
 						<a href="/curriculum/"><img src="<c:url value="/resources/img/index/m_slider2.png"/>" alt="코딩앤플레이 주니어"></a>
 					</div>
 					<div class="item item1">
 						<a href="/curriculum/"><img src="<c:url value="/resources/img/index/m_slider1.png"/>" alt="자바 개강안내"></a>
 					</div>
+					<div class="item4">
+						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/m_slider4.png" alt="코딩놀이터 신청"></a>
+					</div>
 				</div>
 			</div>
+			<div class="feed_wrap">
+				<c:forEach items="${list }" var="item">
+					<div class="item">
+						<div class="top">
+							<div class="title"><a href="<c:url value="/board/view?id=${item.id }"/>">${item.title }</a></div>
+							<div class="info">
+								<span>${item.boardName }</span>
+								<span><fmt:formatDate value="${item.wdate}" pattern="yyyy-MM-dd" /></span>
+							</div>
+						</div>
+						<c:choose>
+							<c:when test="${not empty item.thumbnail }">
+								<div class="image">
+									<a href="<c:url value="/board/view?id=${item.id }"/>">
+										<img src="<c:url value="${item.thumbnail }" />"/>
+									</a>
+								</div>
+							</c:when>
+						</c:choose>
+						<div class="cont">
+							<div class="text">
+								${item.content }
+							</div>
+							<a href="<c:url value="/board/view?id=${item.id }"/>" class="more">원문 보기</a>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
 			<div class="board_list_wrap">
-				<div class="board_list_type2">
+				<div class="board_list_type1">
 					<c:forEach items="${list }" var="item">
 						<div class="item">
 							<div class="image">

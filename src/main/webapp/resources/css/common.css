@@ -142,7 +142,7 @@ input.bt3.on {
 
 @media ( max-width: 1000px ) {
 	.tab_wrap {
-		margin-top: 30px;
+		margin-top: 0;
 		padding: 0 20px;
 	}
 	
