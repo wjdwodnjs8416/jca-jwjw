@@ -16,7 +16,7 @@
 		<div id="containerWrap">
             <div class="contTitle">
                 <div>
-                    <strong>학원소식</strong>
+                    <strong>${menu.title }</strong>
                     <p>
                         "위대한 일을 해낼 수 없다면 작은 일을 위대하게 행하라."
                         <span>- 마틴 루터 킹</span>
@@ -25,15 +25,15 @@
             </div>
 			<div class="board_write_wrap">
                 <div class="board_write">
-                    <form action="<c:url value="/board/notice/edit"/>" method="post">
+                    <form action="<c:url value="/board/edit"/>" method="post">
                     	<input type="hidden" value="${board.id }" name="id"/>
                         <dl>
                             <dt>카테고리</dt>
                             <dd>
-                                <select>
-                                    <option>학원소식</option>
-                                    <option>공지사항</option>
-                                    <option selected>개강안내</option>
+                                <select name="boardType">
+                                	<c:forEach items="${boardTypes }" var="item">
+                                		<option value="${item.id }" <c:if test="${item.id eq board.boardType }">selected</c:if>>${item.title }</option>
+                                	</c:forEach>
                                 </select>
                             </dd>
                         </dl>

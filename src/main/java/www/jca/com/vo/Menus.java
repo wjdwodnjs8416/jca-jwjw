@@ -18,6 +18,7 @@ public class Menus {
 	Menus prev;
 	Menus next;
 	List<Menus> children;
+	String pageComment;
 	
 	public Menus() {
 		this.children = new ArrayList<Menus>();

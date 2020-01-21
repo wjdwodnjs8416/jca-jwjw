@@ -22,7 +22,8 @@
 		UPDATE Board
 		<set>
 			title = '${title}',
-			content = '${content}'
+			content = '${content}',
+			boardType = ${boardType}
 		</set>
 		<where>
 			id=${id}
@@ -44,10 +45,7 @@
 				<when test="boardType eq 0">
 					(
 						board.boardType = 1 or
-						board.boardType = 2 or
-						board.boardType = 3 or
-						board.boardType = 4 or
-						board.boardType = 5
+						board.boardType >= 5
 					) 
 				</when>
 				<otherwise>
@@ -73,11 +71,7 @@
 		<where>
 			<choose>
 				<when test="boardType eq 0">
-					boardType = 1 or
-					boardType = 2 or
-					boardType = 3 or
-					boardType = 4 or
-					boardType = 5
+					boardType = 1 or boardType >= 5
 				</when>
 				<otherwise>
 					boardType = ${boardType}

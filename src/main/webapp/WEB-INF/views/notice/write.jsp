@@ -25,7 +25,6 @@
 			var content = document.getElementById("ir1").value;
 			
 			param += "&content=" +content;
-			console.log(param);
 			
 			if(confirm("작성하시겠습니까?")){
 				$.ajax({
@@ -36,7 +35,7 @@
 				}).done(function(json){
 					if(json.result > 0){
 						alert("작성 완료!");
-						window.location.replace("/board/notice/");
+						window.location.replace("/board/type/");
 					}
 				});
 			}
@@ -58,7 +57,7 @@
 		<div id="containerWrap">
             <div class="contTitle">
                 <div>
-                    <strong>학원소식</strong>
+                    <strong>${menu.title }</strong>
                     <p>
                         "위대한 일을 해낼 수 없다면 작은 일을 위대하게 행하라."
                         <span>- 마틴 루터 킹</span>
@@ -67,14 +66,14 @@
             </div>
 			<div class="board_write_wrap">
                 <div class="board_write">
-                    <form action="<c:url value="/board/notice/write"/>" method="post">
+                    <form action="<c:url value="/board/write"/>" method="post">
                         <dl>
                             <dt>카테고리</dt>
                             <dd>
                                 <select name="boardType">
-                                    <option value="1">학원소식</option>
-                                    <option value="2">공지사항</option>
-                                    <option value="3">개강안내</option>
+                                	<c:forEach items="${boardTypes }" var="item">
+                                		<option value="${item.id }" <c:if test="${item.id eq boardType }">selected</c:if>>${item.title }</option>
+                                	</c:forEach>
                                 </select>
                             </dd>
                         </dl>
@@ -116,6 +115,7 @@
                     </form>
                 </div>
 				<div class="bt_wrap">
+					<input type="hidden" name="boardType" value="${boardType }"/>
 					<a href="javascript:submitContents(this);" class="bt1 on">글쓰기</a>
 					<a href="#" class="bt1">취소</a>
 				</div>

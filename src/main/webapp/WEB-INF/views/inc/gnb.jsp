@@ -12,12 +12,19 @@ $(".m_gnb > ul > li").click(function(){
 
 <c:forEach items="${menus }" var="item">
 	<li>
-		<a href="${item.url }">${item.title }</a>
+		<c:choose>
+			<c:when test="${fn:length(item.children) eq 0}">
+				<a href="<c:url value="/board/type/${item.id }"/>">${item.title }</a>			
+			</c:when>
+			<c:otherwise>
+				<a href="#" onclick="javascript:return false;">${item.title }</a>
+			</c:otherwise>
+		</c:choose>
 		<c:if test="${fn:length(item.children) gt 0}">
 			<ul>
 				<c:forEach items="${item.children }" var="menu">
 					<li>
-						<a href="${menu.url }">${menu.title }</a>
+						<a href="<c:url value="/board/type/${menu.id }"/>">${menu.title }</a>
 					</li>
 				</c:forEach>
 			</ul>

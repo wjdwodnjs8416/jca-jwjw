@@ -45,8 +45,7 @@ public class MenuDAO implements DataAccess<Menus> {
 
 	@Override
 	public Menus selectOne(Menus input) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(namespace +".select_one", input);
 	}
 
 	@Override
@@ -54,5 +53,7 @@ public class MenuDAO implements DataAccess<Menus> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	public List<Menus> selectChildren(){
+		return sqlSession.selectList(namespace +".select_children");
+	}
 }

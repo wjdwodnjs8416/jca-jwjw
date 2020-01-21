@@ -44,8 +44,7 @@ public class MenuService implements DataService<Menus> {
 
 	@Override
 	public Menus selectOne(Menus input) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(input);
 	}
 
 	@Override
@@ -53,5 +52,7 @@ public class MenuService implements DataService<Menus> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	public List<Menus> selectChildren(){
+		return dao.selectChildren();
+	}
 }

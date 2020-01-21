@@ -21,11 +21,8 @@
 		<div id="containerWrap">
 			<div class="contTitle">
 				<div>
-					<strong>추천도서</strong>
-					<p>
-						"책은 위대한 천재가 인류에게 남긴 유산이다."
-						<span>- 에디슨</span>
-					</p>
+					<strong>${menu.title }</strong>
+					<p>${menu.pageComment }</p>
 				</div>
 			</div>
 			<div class="board_list_wrap">
@@ -50,9 +47,9 @@
 						</div>
 						<div class="cont">
 							<div class="category">${item.boardName }</div>
-							<div class="title"><a href="<c:url value="/board/notice/view?id=${item.id }"/>">${item.title }</a></div>
+							<div class="title"><a href="<c:url value="/board/view?id=${item.id }"/>">${item.title }</a></div>
 							<div class="etc">
-								<span>부원장</span>
+								<span>${item.writerName }</span>
 								<span><fmt:formatDate value="${item.wdate}" pattern="yyyy-MM-dd" /></span>
 							</div>
 						</div>
@@ -79,7 +76,7 @@
 					</div>
 				<div class="bt_wrap">
 					<a href="#" class="bt1 on">목록</a>
-					<a href="<c:url value="/board/notice/write"/>" class="bt1">글쓰기</a>
+					<a href="<c:url value="/board/${menu.id }/write"/>" class="bt1">글쓰기</a>
 				</div>
 			</div>
 		</div>

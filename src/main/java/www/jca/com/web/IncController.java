@@ -36,18 +36,12 @@ public class IncController {
 		Iterator<Menus> iter = menus.iterator();
 		while(iter.hasNext()) {
 			Menus menu = iter.next();
-			logger.info(menu.toString());
-			logger.info("parents.size(): " + parents.size());
 			
 			if(menu.getParent() == 0) {
 				parents.put(menu.getId(), menu);
 			}else {
-				logger.info("menu.getParent(): " + menu.getParent());
-				logger.info("parents.get(menu.getParent()): " + parents.get(menu.getParent()));
 				Menus p = parents.get(menu.getParent());
-				
 				if(p != null) {
-					logger.info("p not null");
 					List<Menus> pc = p.getChildren();
 					pc.add(menu);
 				}

@@ -10,8 +10,10 @@
 	<c:import url="/inc/head"></c:import>
 	<script type="text/javascript">
 		function deleteBoard(id){
-			var url = "/notice/delete";
+			var url = "/board/delete";
 			var param = "id="+id;
+			var redirectUrl = $("#redirectUrl").val();
+			
 			if(confirm("삭제하시겠습니까?")){
 				$.ajax({
 					url: url,
@@ -21,7 +23,7 @@
 				}).done(function(json){
 					if(json.result > 0){
 						alert("삭제 완료");
-						window.location.replace("/notice/");
+						window.location.replace(redirectUrl);
 					}
 				});
 			}
@@ -34,7 +36,7 @@
 		<div id="containerWrap">
             <div class="contTitle">
                 <div>
-                    <strong>학원소식</strong>
+                    <strong>${menu.title }</strong>
                     <p>
                         "위대한 일을 해낼 수 없다면 작은 일을 위대하게 행하라."
                         <span>- 마틴 루터 킹</span>
@@ -43,15 +45,13 @@
             </div>
 			<div class="board_view_wrap">
                 <div class="board_view">
-                    <div class="category">학원소식</div>
+                    <div class="category">${menu.title }</div>
                     <div class="etc">
                         <span>${board.writer }</span>
                         <span><fmt:formatDate value="${board.wdate }" pattern="yyyy-MM-dd"/></span>
                     </div>
                     <div class="title"><a href="#">${board.title }</a></div>
-                    <%--
-                    	<div class="image"><a href="#"><img src="<c:url value="/img/temp/1.jpeg"/>" alt="사진"></a></div>
-                     --%>
+                    
                     <div class="cont">${board.content }</div>
                     <div class="link">
                         <strong>참고링크</strong>
@@ -71,7 +71,8 @@
                 </c:if>
 				<div class="bt_wrap">
 					<a href="<c:url value="${listUrl }"/>" class="bt1 on">목록</a>
-					<a href="<c:url value="${listUrl }/edit?id=${board.id }"/>" class="bt1">수정</a>
+					<input type="hidden" id="redirectUrl" value="${listUrl }"/>
+					<a href="<c:url value="/board/edit?id=${board.id }"/>" class="bt1">수정</a>
 					<a href="javascript:deleteBoard('${board.id}')" class="bt1">삭제</a>
 				</div>
 			</div>

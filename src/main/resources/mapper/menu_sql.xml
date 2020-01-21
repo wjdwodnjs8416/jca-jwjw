@@ -7,4 +7,21 @@
 		SELECT * FROM BoardType
 		ORDER BY ID ASC
 	</select>
+	
+	<select id="select_one" parameterType="menus" resultType="menus">
+		SELECT * FROM BoardType
+		<where>
+			id = ${id}
+		</where>
+	</select>
+	
+	<select id="select_children" resultType="menus">
+		SELECT * FROM BoardType
+		<where>
+			parent IS NOT NULL
+			and
+			id != 5
+		</where>
+		ORDER BY ID ASC
+	</select>
 </mapper>
