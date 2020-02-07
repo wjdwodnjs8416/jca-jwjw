@@ -17,21 +17,23 @@
 				<div class="idx_slider">
 					<div class="item item2">
 						<div>
-							<img src="<c:url value="/resources/img/index/slider2_txt.png"/>" alt="자바 프로그래밍">
+							<img src="<c:url value="/resources/img/index/slider/slider2_txt.png"/>" alt="자바 프로그래밍">
 							<a href="/curriculum/">자세히 보기</a>
 							<a href="http://naver.me/5vR5uJrV" target="_blank">수강신청</a>
 						</div>
 					</div>
 					<div class="item item3">
 						<div>
-							<img src="<c:url value="/resources/img/index/slider3_txt.png"/>" alt="코딩앤플레이 주니어">
+							<img src="<c:url value="/resources/img/index/slider/slider3_txt.png"/>" alt="코딩앤플레이 주니어">
 							<a href="/curriculum/">자세히 보기</a>
 							<a href="http://naver.me/GmHjG05a" target="_blank">수강신청</a>
 						</div>
 					</div>
+					<!--
 					<div class="item4">
-						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/slider4.png" alt="코딩놀이터 신청"></a>
+						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/slider/slider4.png" alt="코딩놀이터 신청"></a>
 					</div>
+					-->
 				</div>
 			</div>
 			<div class="m_idx_slider_wrap" style="display: none;">
@@ -45,6 +47,16 @@
 					<div class="item4">
 						<a href="http://naver.me/5qOfxbKh" target="_blank"><img src="/resources/img/index/m_slider4.png" alt="코딩놀이터 신청"></a>
 					</div>
+				</div>
+			</div>
+			<div class="idx_banners_wrap">
+				<div class="idx_banners">
+					<a href="https://blog.naver.com/code-ing/221668796507" target="_blank">
+						<img src="/resources/img/index/coding.jpg" alt="코딩교육의 목적">
+					</a>
+					<a href="https://blog.naver.com/code-ing/221783349119" target="_blank">
+						<img src="/resources/img/index/updowngame.png" alt="Up Down Game 만들기">
+					</a>
 				</div>
 			</div>
 			<div class="feed_wrap">
@@ -76,7 +88,7 @@
 				</c:forEach>
 			</div>
 			<div class="board_list_wrap">
-				<div class="board_list_type1">
+				<div class="board_list_type2">
 					<c:forEach items="${list }" var="item">
 						<div class="item">
 							<div class="image">

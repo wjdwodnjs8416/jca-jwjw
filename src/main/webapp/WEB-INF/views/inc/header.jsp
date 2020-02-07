@@ -52,8 +52,10 @@
 	        <ul></ul>
 	        <a href="https://pf.kakao.com/_ipZxeT" target="_blank" title="카카오톡 문의하기"><img src="<c:url value="/resources/img/comm/header_talk.png"/>" alt="문의하기"></a>
 	        <a href="http://kko.to/jYMXx4Njp" target="_blank" title="전주코딩학원 지도보기"><img src="<c:url value="/resources/img/comm/header_location.png"/>" alt="위치"></a>
+	        <!--
 	        <a href="javascript:void(0)" title="글씨 크게" class="bt_font_bigger"><img src="<c:url value="/resources/img/comm/bt_font+.png"/>" alt="글씨 크게"></a>
 	        <a href="javascript:void(0)" title="글씨 작게" class="bt_font_smaller"><img src="<c:url value="/resources/img/comm/bt_font-.png"/>" alt="글씨 작게"></a>
+	        -->
 	        <a href="javascript:void(0)" title="메뉴 열기" class="menu_opener"><img src="<c:url value="/resources/img/comm/header_menu.png"/>" alt="메뉴 열기"></a>
 	    </div>
 	    <div id="m_gnbWrap">

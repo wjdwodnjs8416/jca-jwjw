@@ -53,6 +53,7 @@
                     <div class="title"><a href="#">${board.title }</a></div>
                     
                     <div class="cont">${board.content }</div>
+                    <c:if test="${fn:length(refLink) ne 0 }">
                     <div class="link">
                     	<dl>
                     		<dt>참고링크</dt>
@@ -63,6 +64,7 @@
                     		</dd>
                     	</dl>
                     </div>
+                    </c:if>
 	                <c:if test="${fn:length(files) ne 0 }">
 						<div class="file">
 							<dl>
