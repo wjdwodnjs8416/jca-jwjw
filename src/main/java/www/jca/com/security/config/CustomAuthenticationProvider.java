@@ -36,7 +36,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String username = authentication.getName();
-		String password = (String)authentication.getCredentials();
+		// String password = (String)authentication.getCredentials();
 		
 		UserDetails user = null;
 		Collection<? extends GrantedAuthority> authorities = null;
@@ -44,14 +44,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		try {
 			user = userService.loadUserByUsername(username);
 			
-			if(user != null && user.getUsername()!= null) {
-				boolean loginResult = passwordEncoder.matches(password, user.getPassword());
-
-				if(!loginResult) {
-					throw new BadCredentialsException(Config.NOT_MATCHED_PWD);
-				}else {
-					authorities = user.getAuthorities();
-				}
+			if(user != null) {
+				logger.info("user" + user.toString());
+				authorities = user.getAuthorities();
 			}else {
 				throw new UsernameNotFoundException("존재하지 않는 아이디입니다.");
 			}

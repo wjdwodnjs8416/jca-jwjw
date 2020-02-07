@@ -16,8 +16,7 @@ public class UserDAO implements DataAccess<UserVO> {
 	
 	@Override
 	public int insert(UserVO input) {
-		// TODO Auto-generated method stub
-		return 0;
+		return template.insert(namespace +".insert", input);
 	}
 
 	@Override
@@ -45,8 +44,7 @@ public class UserDAO implements DataAccess<UserVO> {
 
 	@Override
 	public UserVO selectOne(UserVO input) {
-		// TODO Auto-generated method stub
-		return null;
+		return template.selectOne(namespace +".select-one", input);
 	}
 
 	@Override

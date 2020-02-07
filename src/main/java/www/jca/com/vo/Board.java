@@ -50,4 +50,5 @@ public class Board extends Paging{
 	String boardName;
 	String language;
 	String thumbnail;
+	String refLink;
 }

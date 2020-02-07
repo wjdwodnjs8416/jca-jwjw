@@ -86,6 +86,12 @@
                             	<textarea id="ir1" name="content" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
                             </dd>
                         </dl>
+                        <dl>
+                        	<dt>참고링크</dt>
+                        	<dd>
+                        		<input type="text" placeholder="http://" name="refLink">
+                        	</dd>
+                        </dl>
                         <dl class="image" id="dropzone-img">
                             <dt>사진</dt>
                             <dd>

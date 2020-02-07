@@ -13,20 +13,25 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import www.jca.com.dao.UserDAO;
 import www.jca.com.vo.UserVO;
 
 @Service
 public class UserDetailService implements UserDetailsService { 
 	Logger logger = LoggerFactory.getLogger(UserDetailsService.class);
 	
+	@Autowired
+	private UserDAO dao;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserVO user = new UserVO();
-		user.setLogin(username);
+		user.setEmail(username);
+		user = dao.selectOne(user);
+		
 		GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole_name());
-		UserDetails userDetails = (UserDetails)new User(user.getLogin()
-				,user.getPassword(), Arrays.asList(authority));
+		UserDetails userDetails = (UserDetails)new User(user.getEmail()
+				,""/*PASSWORD*/, Arrays.asList(authority));
 				
 		return userDetails;
 	}

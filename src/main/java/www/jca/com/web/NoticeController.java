@@ -122,18 +122,22 @@ public class NoticeController extends JCAController implements BoardController<B
 	public ModelAndView getWriteView(ModelAndView mv, Board model, HttpServletRequest request,
 			@PathVariable(value="boardType")Integer typeOfBoard) {
 		
-		List<Menus> menus = menuService.selectChildren();
-		Iterator<Menus> iter = menus.iterator();
-		while(iter.hasNext()) {
-			Menus menu = iter.next();
-			if(menu.getId() == typeOfBoard) {
-				mv.addObject("menu", menu);
+		if(request.isUserInRole("ROLE_ADMIN")) {
+			List<Menus> menus = menuService.selectChildren();
+			Iterator<Menus> iter = menus.iterator();
+			while(iter.hasNext()) {
+				Menus menu = iter.next();
+				if(menu.getId() == typeOfBoard) {
+					mv.addObject("menu", menu);
+				}
 			}
+			
+			mv.addObject("boardType", typeOfBoard);
+			mv.addObject("boardTypes", menus);
+			mv.setViewName("/notice/write");
+		}else {
+			mv.setViewName("redirect:/notice/"+typeOfBoard);
 		}
-		
-		mv.addObject("boardType", typeOfBoard);
-		mv.addObject("boardTypes", menus);
-		mv.setViewName("/notice/write");
 		return mv;
 	}
 	
@@ -158,6 +162,7 @@ public class NoticeController extends JCAController implements BoardController<B
 			@RequestParam(value="files", required = false)String files,
 			@RequestParam(value="images", required = false)String images,
 			ModelAndView mv) {
+		
 		JSONObject json = new JSONObject();
 		UserVO user = getUser();
 		if(user != null) {

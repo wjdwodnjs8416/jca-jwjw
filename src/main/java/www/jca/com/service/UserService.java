@@ -15,8 +15,7 @@ public class UserService implements DataService<UserVO> {
 	
 	@Override
 	public int insert(UserVO input) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(input);
 	}
 
 	@Override
@@ -44,8 +43,7 @@ public class UserService implements DataService<UserVO> {
 
 	@Override
 	public UserVO selectOne(UserVO input) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(input);
 	}
 
 	@Override

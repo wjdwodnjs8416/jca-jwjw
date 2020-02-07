@@ -58,7 +58,7 @@
                     		<dt>참고링크</dt>
                     		<dd>
                     			<ul>
-                    				<li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
+                    				<li><a href="${board.refLink }" target="_blank">${board.refLink }</a></li>
                     			</ul>
                     		</dd>
                     	</dl>

@@ -2,12 +2,31 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<script type="text/javascript">
+function logout(){
+	var url = "/member/logout";
+	
+	$.ajax({
+		url : url,
+		type: "POST",
+		dataType: "json",
+		contentType: 'application/json; charset=utf-8'
+	}).done(function(json){
+		if(json.id > 0){
+			window.location.replace("/");
+		}
+	});
+}
+</script>
 <div id="footerWrap">
 	<div class="top">
 		<div>
 			<a href="/member/signup">사용자 등록</a>
 			<a href="/member/login">로그인</a>
-			<a href="#">로그아웃</a>
+			<sec:authorize access="isAuthenticated()">
+				<a href="javascript:logout();">로그아웃</a>
+			</sec:authorize>
 		</div>
 	</div>
 	<div id="footer">

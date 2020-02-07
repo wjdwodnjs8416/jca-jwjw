@@ -76,7 +76,9 @@
 					</div>
 				<div class="bt_wrap">
 					<a href="#" class="bt1 on">목록</a>
-					<a href="<c:url value="/board/${menu.id }/write"/>" class="bt1">글쓰기</a>
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+						<a href="<c:url value="/board/${menu.id }/write"/>" class="bt1">글쓰기</a>
+					</sec:authorize>
 				</div>
 			</div>
 		</div>
