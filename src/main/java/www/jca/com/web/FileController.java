@@ -158,7 +158,7 @@ public class FileController extends JCAController{
 		// File originFile = new File(filePath);
 		BufferedImage srcImg = ImageIO.read(originFile); 
 		// 썸네일의 너비와 높이 입니다. 
-		int dw = 150, dh = 120; 
+		int dw = 400, dh = 225; 
 		// 원본 이미지의 너비와 높이 입니다. 
 		int ow = srcImg.getWidth(); 
 		int oh = srcImg.getHeight(); 

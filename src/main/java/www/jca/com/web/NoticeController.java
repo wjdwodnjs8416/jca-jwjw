@@ -136,7 +136,7 @@ public class NoticeController extends JCAController implements BoardController<B
 			mv.addObject("boardTypes", menus);
 			mv.setViewName("/notice/write");
 		}else {
-			mv.setViewName("redirect:/notice/"+typeOfBoard);
+			mv.setViewName("redirect:/board/type/"+typeOfBoard);
 		}
 		return mv;
 	}

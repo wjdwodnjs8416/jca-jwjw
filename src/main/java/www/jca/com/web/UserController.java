@@ -55,8 +55,6 @@ public class UserController {
 			JSONObject accountObj = response.getJSONObject("kakao_account");
 			JSONObject profileObj = accountObj.getJSONObject("profile");
 			
-			logger.info(accountObj.toString());
-			
 			if(accountObj.getBoolean("has_email")) {
 				UserVO user = new UserVO();
 				user.setEmail(accountObj.getString("email"));
@@ -111,7 +109,6 @@ public class UserController {
 		JSONObject response = restUtil.post("/v1/user/logout", accessToken);
 		if(response.getInt("id") >0) {
 			session.removeAttribute("access_token");
-			session.removeAttribute("JSESSIONID");
 		}
 		return response.toString();
 	}

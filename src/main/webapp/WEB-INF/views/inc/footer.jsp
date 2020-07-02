@@ -14,7 +14,7 @@ function logout(){
 		contentType: 'application/json; charset=utf-8'
 	}).done(function(json){
 		if(json.id > 0){
-			window.location.replace("/");
+			window.location.replace("/j_spring_security_logout");
 		}
 	});
 }
