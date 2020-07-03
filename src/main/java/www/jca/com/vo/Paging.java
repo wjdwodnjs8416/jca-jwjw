@@ -1,5 +1,8 @@
 package www.jca.com.vo;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Paging {
 	public static final int PAGE_SIZE_LIST = 10;
 	public static final int PAGE_SIZE_CARD = 9;
@@ -209,5 +212,10 @@ public class Paging {
         }
 
         this.setFinalPageNo(finalPage); // 마지막 페이지 번호
+    }
+    
+    @Override
+    public String toString() {
+    	return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 }
