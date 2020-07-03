@@ -10,6 +10,22 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Board extends Paging{
+	int id;
+	String title;
+	String content;
+	Date wdate;
+	Date udate;
+	int writer;
+	int boardType;
+	String writerName;
+	int fileCnt;
+	int pictureCnt;
+	int viewCount;
+	int replyCnt;
+	String boardName;
+	String language;
+	String thumbnail;
+	String refLink;
 	
 	public static final int TYPE_ALL = 0;
 	public static final int TYPE_CLASS = 6;
@@ -35,20 +51,5 @@ public class Board extends Paging{
 		board.setId(id);
 		return board;
 	}
-	int id;
-	String title;
-	String content;
-	Date wdate;
-	Date udate;
-	int writer;
-	int boardType;
-	String writerName;
-	int fileCnt;
-	int pictureCnt;
-	int viewCount;
-	int replyCnt;
-	String boardName;
-	String language;
-	String thumbnail;
-	String refLink;
+	
 }

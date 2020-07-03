@@ -4,6 +4,15 @@
 <html>
 <head>
 	<c:import url="/inc/head"></c:import>
+	<style type="text/css">
+	#kakao-login-btn{
+		background-image:url(/resources/img/comm/kakao_login_large_wide.png);
+		background-repeat:no-repeat;
+		background-size:cover;
+		background-color:#fff !important;
+		border:0px;
+	}
+	</style>
 </head>
 <body>
 	<div id="wrap">
@@ -28,7 +37,7 @@
 						<dt>비밀번호</dt>
 						<dd><input type="password" placeholder="비밀번호 입력"></dd>
 					</dl>
-					<input type="button" value="로그인" class="bt3 on" id="kakao-login-btn">
+					<input type="button" class="bt3 on login-btn" id="kakao-login-btn">
 				</form>
 				<a href="/member/signup">사용자 등록</a>
 				<a href="/member/findId">아이디 찾기</a>
@@ -45,7 +54,7 @@
 	Kakao.Auth.createLoginButton({ 
 		container : '#kakao-login-btn',
 		success : function(authObj) {
-			console.log(authObj);
+			
 			var url = "/member/signup";
 			var param = JSON.stringify(authObj);
 			
