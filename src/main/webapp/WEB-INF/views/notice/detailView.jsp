@@ -11,7 +11,7 @@
 		<div id="containerWrap">
             <div class="contTitle">
                 <div>
-                    <strong>${menu.title }</strong>
+                    <strong></strong>
                     <p>
                         "위대한 일을 해낼 수 없다면 작은 일을 위대하게 행하라."
                         <span>- 마틴 루터 킹</span>
@@ -20,14 +20,14 @@
             </div>
 			<div class="board_view_wrap">
                 <div class="board_view">
-                    <div class="category">${menu.title }</div>
+                    <div class="category"></div>
                     <div class="etc">
-                        <span>${board.writer }</span>
-                        <span>${board.wdate }</span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="title"><a href="#">${board.title }</a></div>
+                    <div class="title"><a href="#"></a></div>
                     
-                    <div class="cont">${board.content }</div>
+                    <div class="cont"></div>
                     
                     <div class="link">
                     	<dl>
@@ -45,7 +45,7 @@
 								<dt>첨부파일</dt>
 								<dd>
 									<ul>
-				                		<c:forEach items="${files }" var="item">
+				                		<c:forEach items="${ }" var="item">
 				                			<li>
 				                				<a href="<c:url value="/upload/get/1"/>">첨부파일</a>
 				                			</li>
