@@ -56,8 +56,7 @@
 						</div>
                 </div>
 				<div class="bt_wrap">
-					<a href="<c:url value="${listUrl }"/>" class="bt1 on">목록</a>
-					<input type="hidden" id="redirectUrl" value="${listUrl }"/>
+					<a href="<c:url value=""/>" class="bt1 on">목록</a>
 					<a href="<c:url value="/board/edit?id=${board.id }"/>" class="bt1">수정</a>
 					<a href="javascript:deleteBoard('${board.id}')" class="bt1">삭제</a>
 				</div>
