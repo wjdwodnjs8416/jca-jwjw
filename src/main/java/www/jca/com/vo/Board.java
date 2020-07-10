@@ -2,11 +2,14 @@ package www.jca.com.vo;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.json.JSONObject;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
 @Getter
 @Setter
 public class Board extends Paging{
@@ -51,5 +54,22 @@ public class Board extends Paging{
 		board.setId(id);
 		return board;
 	}
-	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+	}
+	public static Board parseBoard(JSONObject input) {
+		Board board = new Board();
+		board.setId(input.getInt("id"));
+		board.setTitle(input.getString("title"));
+		board.setContent(input.getString("content"));
+		board.setWdate(new Date(input.getLong("wdate")));
+		board.setFileCnt(input.getInt("fileCnt"));
+		board.setPictureCnt(input.getInt("pictureCnt"));
+		board.setBoardType(input.getInt("boardType"));
+		if(!input.isNull("boardName")) {
+			board.setBoardName(input.getString("boardName"));
+		}
+		return board;
+	}
 }
