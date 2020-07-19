@@ -129,11 +129,28 @@ public class ClassDataController extends JCAController implements BoardControlle
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@ResponseBody
+	@RequestMapping(value="/class/data/edit", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String edit(Board model) {
+		logger.info("edit");
+		
+		JSONObject json = new JSONObject();
+		json.put("result", 1);
+		
+		return json.toString();
+		}
+	
+	@ResponseBody
+	@RequestMapping(value="/class/data/delete", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Override
 	public String delete(Board model) {
-		// TODO Auto-generated method stub
-		return null;
+		logger.info(model.toString());
+		RestTemplate rest = new RestTemplate();
+		StringBuilder urlBuilder = new StringBuilder();
+		urlBuilder.append("http://jcoding.kr/api/board/delete/");
+		
+		JSONObject json = new JSONObject(rest.postForObject(urlBuilder.toString(), model, Board.class));
+		return json.toString();
 	}
 
 }
